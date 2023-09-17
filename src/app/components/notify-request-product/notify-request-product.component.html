@@ -1,0 +1,51 @@
+<!-- <ion-card id="notify-request-modal-1"> -->
+  <!-- <ng-template> -->
+    <div class="wrapper">
+      <ion-item lines="none">
+        <h3 class="text-color-black text-bold signup-1">Request This Product</h3>
+      </ion-item>
+      <ion-card [formGroup]="requestItemFormGroup">
+        <ion-item lines="none">
+          <ion-label>
+            <p>Product</p>
+            <input type="text"  formControlName="product" placeholder="Product Name">
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label>
+            <p>Quantity</p>
+            <input type="text"  formControlName="quantity" placeholder="Quantity">
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label>
+            <p>Name</p>
+            <input type="text"  formControlName="name" placeholder="Name">
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label>
+            <p>Email</p>
+            <input type="text"  formControlName="email" placeholder="Email">
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label>
+            <p>Phone</p>
+            <input type="text"  formControlName="phone" placeholder="Phone">
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label>
+            <p>Comments</p>
+            <input type="text" formControlName="comments"  placeholder="Comments">
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-button fill="clear" slot="start" class="btn-r" (click)="dismiss()">Cancel</ion-button>
+          <ion-button fill="clear" slot="end" class="btn-r" (click)="onSubmit()">Submit</ion-button>
+        </ion-item>
+      </ion-card>
+    </div>
+  <!-- </ng-template> -->
+<!-- </ion-card>  -->

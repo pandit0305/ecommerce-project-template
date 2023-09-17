@@ -1,0 +1,43 @@
+<ion-modal id="modal-add-2" #modal trigger="open-ionic-modal-add-2">
+  <ng-template>
+    <div class="form-container">
+      <div class="title-section">
+        Enter Complete Address
+        <ion-icon name="close-circle-outline" (click)="makeInVisible()"></ion-icon>
+      </div>
+
+      <form [formGroup]="addAddressForm">
+
+        <ion-input name="name" formControlName="name" label="Receiver's Name" label-placement="floating" fill="outline"
+          placeholder="Enter Receiver's Name" class="border-section input-size"></ion-input>
+        <ion-input name="gateCode" formControlName="gateCode" label="Gate Code" label-placement="floating"
+          fill="outline" placeholder="Gate Code" class="border-section input-size"></ion-input>
+        <ion-input name="zipCode" formControlName="zipCode" label="Zip Code" label-placement="floating" fill="outline"
+          placeholder="Zip Code" class="border-section input-size"></ion-input>
+        <ion-input name="suite" formControlName="suite" label="Suite / Apt#" label-placement="floating" fill="outline"
+          placeholder="Suite / Apt#" class="border-section input-size"></ion-input>
+        <ion-input name="aptName" formControlName="aptName" label="Name of Appartment" label-placement="floating"
+          fill="outline" placeholder="Name of Appartment" class="border-section input-size"></ion-input>
+        <ion-input name="address" formControlName="address" label="city,state,country" label-placement="floating"
+          fill="outline" placeholder="city,state,country" class="border-section input-size"></ion-input>
+
+        <div class="btn-container" *ngIf="!others_div">
+          <button name="Home" class="btn-color" (click)="setType('Home')" [ngClass]="{'isClicked':isHome}"
+            class="border-section button-padding">Home</button>
+          <button name="Office" class="btn-color" (click)="setType('Office')" [ngClass]="{'isClicked':isOffice}"
+            class="border-section button-padding">Office</button>
+          <button name="Others" class="btn-color" (click)="setType('')" [ngClass]="{'isClicked':isOthers}"
+            class="border-section button-padding">Other</button>
+        </div>
+
+        <div class="other-section" *ngIf="others_div">
+          <span class="span-1">other</span>
+          <input type="text" name="other_address" formControlName="addressType" placeholder="Enter Address Type">
+          <span (click)="cancel()" class="span-2">Cancel</span>
+        </div>
+
+        <button class="border-section full-width" (click)="onSaveAddress()">Save Address</button>
+      </form>
+    </div>
+  </ng-template>
+</ion-modal>

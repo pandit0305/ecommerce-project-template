@@ -1,0 +1,20 @@
+
+<ion-content [fullscreen]="true">
+  <h1>My Orders</h1>
+  <ion-list lines="none">
+    <div *ngFor="let item of products;let i=index">
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img [src]="item.image" />
+        </ion-thumbnail>
+        <ion-label>
+          <p><b>{{item.status}}</b></p>
+          <ion-text>Arriving By {{item.dateOfArrival}}</ion-text><br>
+          <ion-text>{{item.productTitle}}</ion-text>
+        </ion-label>
+        <ion-icon name="chevron-forward-outline" slot="end" (click)="onNextClicked(item.id)"></ion-icon>
+      </ion-item>
+      <div class="hr-line"></div>
+    </div>
+  </ion-list>
+

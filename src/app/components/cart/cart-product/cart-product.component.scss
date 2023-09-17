@@ -1,0 +1,139 @@
+.item-bx {
+    margin-top: 15px;
+}
+.box-s > ion-icon:hover{
+    color: #ff5c01;
+}
+.text-bold {
+    font-weight: bold;
+}
+
+.yesNo-box {
+    display: flex;
+    height: 40px;
+}
+
+.toggle-btn {
+    display: flex;
+}
+
+.small-image {
+    border-radius: 25px;
+    width: 100%;
+    height: 100%;
+}
+
+.yes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(209, 203, 203);
+    border-right: none;
+    padding: 10px;
+    width: 50px;
+    font-size: 15px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    cursor: pointer;
+}
+
+.no {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(209, 203, 203);
+    border-left: none;
+    padding: 10px;
+    width: 50px;
+    font-size: 15px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #ff5c01;
+    color: white;
+    cursor: pointer;
+}
+
+.text-02 {
+    font-size: 15px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.hr-line {
+    width: 95%;
+    border: 1px solid black;
+    opacity: 0.1;
+    margin: auto;
+}
+
+.box-s {
+    display: flex;
+    justify-content: space-between;
+}
+
+ion-icon {
+    font-size: 24px;
+    opacity: 0.8;
+}
+
+// checkout
+.count-txt {
+    font-size: 16px;
+}
+
+@media all and (min-width:768px) and (max-width:1024px) {
+    .small-image {
+        border-radius: 25px;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media all and (min-width:321px) and (max-width:768px) {
+    .small-image {
+        border-radius: 25px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .yesNo-box {
+        display: flex;
+        height: 30px;
+    }
+
+    .yes {
+        border: 1px solid rgb(209, 203, 203);
+        border-right: none;
+        padding: 5px;
+        width: 40px;
+        font-size: 12px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    .no {
+        border: 1px solid rgb(209, 203, 203);
+        border-left: none;
+        padding: 5px;
+        width: 40px;
+        font-size: 12px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        background-color: #ff5c01;
+        color: white;
+    }
+
+    .text-02 {
+        font-size: 12px;
+        margin-left: 5px;
+        margin-top: 5px;
+    }
+}
+
+@media (max-width:320px) {
+    .small-image {
+        border-radius: 25px;
+        width: 100%;
+        height: 100%;
+    }
+}

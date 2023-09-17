@@ -1,0 +1,37 @@
+<ion-menu side="end" menuId="address-menu" contentId="address-menu">
+  <ion-content class="ion-padding">
+    <ion-icon name="close" class="close-btn" size="large" (click)="onClose()"></ion-icon>
+    <ion-title class="text-color-black address-1">Add Details</ion-title>
+    <ion-list lines="none" [formGroup]="addressForm">
+      <ion-item>
+        <input  class="text-color-black address-text"  formControlName="streetAddress" placeholder="Street Address*" [ngClass]="{'danger':isInvalid('streetAddress')}">
+      </ion-item>
+
+      <ion-item>
+        <input class="text-color-black address-text" formControlName="gateCode" placeholder="Gate Code">
+      </ion-item>
+
+      <ion-item>
+        <input class="text-color-black address-text" formControlName="zipCode" placeholder="Zip Code*" [ngClass]="{'danger':isInvalid('zipCode')}">
+      </ion-item>
+
+      <ion-item>
+        <input class="text-color-black address-text" formControlName="SuiteOrApt" placeholder="Suite/Apt#">
+      </ion-item>
+
+      <ion-item>
+        <input class="text-color-black address-text" formControlName="appartmentOrCommunity" placeholder="Name of Appartment/ Community">
+      </ion-item>
+      <ion-item>
+        <input class="text-color-black address-text" formControlName="cityStateCountry" placeholder="City, State, Country">
+      </ion-item>
+    </ion-list>
+    <ion-title class="text-color-black address-1">Save As</ion-title>
+    <div class="save-bx">
+      <ion-button fill="clear" class="save-as" *ngFor="let btn of saveButtons;" (click)="getAddressCategory(btn)" [ngClass]="{'danger':btn?.isSelect && id==btn?.id}">{{ btn?.title }}</ion-button>
+    </div>
+    <div>
+      <button class="checkout-btn" fill="clear" (click)="gotoCheckout()">Save & Proceed</button>
+    </div>
+  </ion-content>
+</ion-menu>

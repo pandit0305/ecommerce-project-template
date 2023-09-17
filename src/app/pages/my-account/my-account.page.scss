@@ -1,0 +1,50 @@
+h1 {
+    margin: 20px 5% 20px 5%;
+}
+
+ion-grid {
+    width: 90%;
+    margin: 20px auto;
+}
+
+ion-list {
+    border-radius: 20px;
+    border: 1px solid rgba($color: #000000, $alpha: 0.2);
+}
+
+ion-item {
+    cursor: pointer;
+    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.2);
+    width: 95%;
+    margin: 10px auto;
+}
+
+ion-icon {
+    font-size: 40px;
+    color: rgb(240, 115, 40);
+}
+
+.text-header {
+    font-size: 17px;
+}
+
+.btn-edit {
+    margin: 20px;
+}
+
+.icon-text-size {
+    font-size: 20px;
+}
+
+.section-2 {
+    padding-left: 20px;
+}
+
+.last-one {
+    border-bottom: 0px solid rgba($color: #ffffff, $alpha: 1.0);
+    margin-bottom: 0px;
+}
+
+.text-color {
+    color: black;
+}

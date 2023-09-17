@@ -1,0 +1,16 @@
+<div class="banner" *ngIf="!isLoading">
+  <swiper-container (slidechange)="swiperSlideChanged($event)" [loop]="true" navigation="true"
+    [pagination]="true" autoplay="true">
+    <swiper-slide *ngFor="let slider of sliders;">
+      <img [src]="slider.image"  />
+    </swiper-slide>
+  </swiper-container>
+</div>
+
+<div class="banner" *ngIf="isLoading">
+  <swiper-container [loop]="true" navigation="true" [pagination]="true">
+    <swiper-slide *ngFor="let slider of sliders;">
+      <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+    </swiper-slide>
+  </swiper-container>
+</div>

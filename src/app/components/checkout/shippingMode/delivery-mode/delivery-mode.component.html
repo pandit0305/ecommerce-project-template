@@ -1,0 +1,25 @@
+
+<div class="box-s">
+  <h3 class="text-color-black text-bold">{{ title }}</h3>
+  <ion-icon name="calendar" size="large" id="calendar" *ngIf="calender"></ion-icon>
+</div>
+<h4 class="text-color-black delivery-1"><span class="text-bold">Delivery Days:</span> All days in a week
+  from 10:00 AM to 09:00 PM</h4>
+<ion-grid>
+  <ion-row>
+    <ion-col [sizeXs]="6" [sizeSm]="6" [sizeMd]="2" class="text-center col-1" *ngFor="let date of deliveryDates;">
+      <ion-title class="text-color-black opacity text-2 text-bold date-text-1">{{ date?.day }}</ion-title>
+      <h4 class="text-color-black delivery-1 text-font line-space date-text-1">{{ date?.date }}</h4>
+      <h4 class="text-color-black delivery-1 text-font date-text-1">{{ date?.time }}</h4>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<ng-container *ngIf="selectTime">
+  <h3 class="text-color-black text-bold">Select Pickup Time</h3>
+  <ion-button fill="clear" class="btn-a1" [ngClass]="{'btn-a1-2':isDelivery}"
+  (click)="onDelivery()">12:00:00-14:00:00</ion-button>
+  <ion-button fill="clear" class="btn-a1" [ngClass]="{'btn-a1-2':isPickup}" 
+  (click)="onPickup()">14:00:00-16:00:00</ion-button>
+  <ion-button fill="clear" class="btn-a1" [ngClass]="{'btn-a1-2':isTwoHourDelivery}"
+   (click)="onTwoHourDelivery()">16:00:00-18:00:00</ion-button>
+</ng-container>

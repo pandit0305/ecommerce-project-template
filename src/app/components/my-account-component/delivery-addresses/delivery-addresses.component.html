@@ -1,0 +1,16 @@
+<h1>Saved Addresses</h1>
+<div class="div-container" *ngFor="let object of deliveyAddressObjects; let i=index;">
+  <div class="span-container">
+    <span class="text-bold">{{object.name}}</span>
+    <span class="like-btn">{{object.addressType}}</span>
+    <span class="span-right" class="dropdown"><ion-icon name="ellipsis-vertical" class="dropbtn"></ion-icon>
+      <div class="dropdown-content">
+        <a (click)="editAddress(object)" id="open-ionic-model-edit" expand="block">
+          <ion-icon name="eyedrop"></ion-icon>Edit</a>
+        <a (click)="deleteAddress(i)"><ion-icon name="trash" class="marginRight"></ion-icon>Delete</a>
+      </div>
+    </span>
+  </div>
+  <p>{{object.gateCode}}, {{object.suite}}, {{object.aptName}}, {{object.zipCode}}, {{object.address}}</p>
+</div>
+<ion-button class="custom-btn" id="open-ionic-model-3" expand="block">+ Add New Address</ion-button>

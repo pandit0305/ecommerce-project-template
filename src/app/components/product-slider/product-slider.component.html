@@ -1,0 +1,104 @@
+<swiper-container [slidesPerView]="screenWidth > 768? 5 : 2.5" pager="true" navigation="true">
+  <swiper-slide *ngFor="let el of items; let i = index">
+    <ng-container *ngIf="!el?.out_of_stock">
+      <ion-card class="ion-no-margin">
+        <ion-icon name="heart-outline" size="large" class="favicon" *ngIf="!el?.wishlist"
+          (click)="addWishlist(el)"></ion-icon>
+        <ion-icon name="heart" size="large" class="favicon" *ngIf="el?.wishlist"
+          (click)="removeFromWishList(el)"></ion-icon>
+        <div class="container" *ngIf="el?.offer">
+          <img src="assets/image1.png" />
+          <p class="text-color-black discount">{{ el?.discount }}%off</p>
+        </div>
+        <div class="container">
+          <img src="assets/image2.png" />
+          <p class="text-color-black discount1">{{ el?.discount }}%off</p>
+        </div>
+        <div class="bx-01" (click)="getProductItem(el)">
+          <div class="img-box">
+            <img [src]="el?.image" alt="onion" (click)="getProductItem(el)" />
+          </div>
+          <div class="name-box">
+            <p class="text-color-black item-name">{{
+              el?.title
+              }}</p>
+          </div>
+        </div>
+        <div class="btn-box">
+          <div>
+            <p class="price text-color-black">{{ el?.total }}</p>
+          </div>
+          <div>
+            <ng-container *ngIf="!el?.already_added_to_cart">
+              <ion-button (click)="addToCart(el)" size="small" fill="clear" class="add-btn">ADD</ion-button>
+            </ng-container>
+            <ng-container *ngIf="el?.already_added_to_cart">
+              <div style="width: 80px;">
+                <app-cart-button [item]="el"></app-cart-button>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </ion-card>
+    </ng-container>
+    <ng-container *ngIf="el?.out_of_stock">
+      <ion-card class="ion-no-margin">
+        <ion-icon name="heart-outline" size="large" class="favicon opacity" *ngIf="!el?.wishlist"></ion-icon>
+        <ion-icon name="heart" size="large" class="favicon opacity" *ngIf="el?.wishlist"></ion-icon>
+        <div class="container opacity" *ngIf="el?.offer">
+          <img src="assets/image1.png" />
+          <p class="text-color-black discount">{{ el?.discount }}%off</p>
+        </div>
+        <div class="container opacity">
+          <img src="assets/image2.png" />
+          <p class="text-color-black discount1">{{ el?.discount }}%off</p>
+        </div>
+        <div class="bx-01">
+          <div class="img-box opacity">
+            <img [src]="el?.image" alt="onion" (click)="getProductItem(el)" />
+          </div>
+          <div class="out-bx">
+            <h2 class="text-color-red outOfStock">Out Of Stock</h2>
+          </div>
+          <div class="name-box opacity">
+            <p class="text-color-black item-name">{{
+              el?.name
+              }}</p>
+          </div>
+        </div>
+        <div class="btn-box">
+          <div>
+            <p class="price text-color-black opacity">{{ el?.price }}</p>
+          </div>
+          <div>
+            <ion-button (click)="getNotifyProduct(el)" size="small" fill="clear"
+              class="add-btn">Notify</ion-button>
+          </div>
+        </div>
+      </ion-card>
+    </ng-container>
+  </swiper-slide>
+</swiper-container>
+
+<!-- <ng-container *ngIf="isLoading">
+  <swiper-container [slidesPerView]="screenWidth > 768 ? 5 : 2.5" pager="true" navigation="true" *ngIf="isLoading">
+    <swiper-slide *ngFor="let element of item;">
+      <ion-card>
+        <ion-skeleton-text [animated]="true" class="icon-sk"></ion-skeleton-text>
+        <ion-card-content class="img-01">
+          <ion-skeleton-text [animated]="true" style="width: 80%;height: 100px;"></ion-skeleton-text>
+        </ion-card-content>
+        <ion-card-header>
+          <ion-skeleton-text [animated]="true" style="width: 80%;height: 10px; margin-left: 10%;"></ion-skeleton-text>
+          <ion-skeleton-text [animated]="true" style="width: 80%;height: 10px; margin-left: 10%;"></ion-skeleton-text>
+        </ion-card-header>
+        <ion-card-content id="price-btn">
+          <ion-label>
+            <ion-skeleton-text [animated]="true" style="width:50px;height: 30px;"></ion-skeleton-text>
+          </ion-label>
+          <ion-skeleton-text [animated]="true" style="width: 50px;height: 30px;"></ion-skeleton-text>
+        </ion-card-content>
+      </ion-card>
+    </swiper-slide>
+  </swiper-container>
+</ng-container> -->

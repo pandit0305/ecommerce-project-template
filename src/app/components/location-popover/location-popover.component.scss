@@ -1,0 +1,63 @@
+input[type='radio'] {
+  accent-color: #ff5c01;
+}
+ion-modal .wrapper {
+  margin-bottom: 10px;
+  margin: 20px 35px;
+}
+
+.text-1 {
+  margin: 20px 20px 10px 20px;
+  font-weight: bolder;
+  font-family: "Gill Sans Extrabold", sans-serif;
+  text-align: center;
+  font-size: 20px;
+}
+
+.bg-color {
+  background-color: #ff5c01;
+}
+
+.border-r {
+  border-radius: 25px;
+}
+#popover-1 {
+  --backdrop-opacity: 0;
+  --color: white;
+  --width: 300px;
+  --border-radius: 25px;
+    margin-top: 30px;
+}
+#popover-1 .p-2 {
+  margin: 20px 20px 10px 20px;
+  font-weight: bolder;
+  font-family: sans-serif;
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+#popover-1 .box-04 {
+  display: flex;
+  justify-content: center;
+}
+.radio-1{
+  font-size: 14px;
+  margin: 5px;
+}
+
+#popover-1 .update-btn {
+  color: var(--ion-color-secondary-contrast);
+  border: none;
+  padding: 8px 15px;
+  font-size: 12px;
+  font-family: sans-serif;
+  margin: 20px 0px;
+  font-weight: bold;
+  transition: 0.4s ease-in-out;
+}
+#popover-1 .update-btn:hover{
+  color: #ff5c01;
+  background: #f5cab1;
+  padding: 5px 10px;
+
+}

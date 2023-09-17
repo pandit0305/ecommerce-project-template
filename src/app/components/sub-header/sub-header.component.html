@@ -1,0 +1,20 @@
+<div class="box">
+  <swiper-container [slidesPerView]="screenWidth > 768 ? 12 : 3.5" (slidechange)="swiperSlideChanged($event)">
+    <swiper-slide *ngFor="let slider of options;">
+      <p (click)="gotoProductPage(slider)" class="category">
+        {{ slider?.link1 }}
+      </p>
+    </swiper-slide>
+    <swiper-slide>
+      <ion-button class="dropdownbtn" id="click-trigger" fill="clear">More</ion-button>
+    </swiper-slide>
+  </swiper-container>
+</div>
+<ion-popover trigger="click-trigger" triggerAction="hover">
+  <ng-template>
+    <div class="wraper">
+      <ion-text class="popover" *ngFor="let link of dropdownoptions;" (click)="gotoProductPage(link)">{{
+        link?.link }}</ion-text>
+    </div>
+  </ng-template>
+</ion-popover>

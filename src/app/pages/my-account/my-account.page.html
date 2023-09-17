@@ -1,0 +1,109 @@
+<app-header></app-header>
+<ion-content [fullscreen]="true">
+  <app-bread-crumb [breadCrumbs]="breadCrumbs"></app-bread-crumb>
+  <h1>My Account</h1>
+  <ion-grid>
+    <ion-row>
+      <ion-col [sizeMd]="4" [sizeSm]="4" [sizeXs]="12">
+        <ion-list lines="none">
+          <ion-item (click)="showInfo()">
+            <ion-thumbnail slot="start">
+              <ion-icon name="person"></ion-icon>
+            </ion-thumbnail>
+            <ion-label>
+              <ion-text class="text-header text-color">{{personData.firstName}}{{personData.lastName}}</ion-text><br>
+              <ion-text class="text-color">{{personData.emailId}}</ion-text><br>
+              <ion-text class="text-color">{{personData.phoneNumber}}</ion-text>
+            </ion-label>
+            <ion-icon name="chevron-forward-outline" slot="end" [hidden]="!isIconVisible"
+              class="icon-text-size"></ion-icon>
+          </ion-item>
+
+          <ion-item (click)="showMyOrderes()" routerLink="/my-orders">
+            <ion-thumbnail slot="start">
+              <ion-icon name="basket"></ion-icon>
+            </ion-thumbnail>
+            <ion-label>
+              <ion-text class="text-header text-color">My Orders</ion-text>
+            </ion-label>
+            <ion-icon name="chevron-forward-outline" slot="end" class="icon-text-size"
+              [hidden]="!myOrderesVisible"></ion-icon>
+          </ion-item>
+
+          <ion-item (click)="showCart()">
+            <ion-thumbnail slot="start">
+              <ion-icon name="cart"></ion-icon>
+            </ion-thumbnail>
+            <ion-label>
+              <ion-text class="text-header text-color">Cart</ion-text>
+            </ion-label>
+            <ion-icon name="chevron-forward-outline" slot="end" class="icon-text-size"
+              [hidden]="!cartVisible"></ion-icon>
+          </ion-item>
+
+          <ion-item (click)="showWishList()" routerLink="/wishlist">
+            <ion-thumbnail slot="start">
+              <ion-icon name="heart"></ion-icon>
+            </ion-thumbnail>
+            <ion-label>
+              <ion-text class="text-header text-color">Wish List</ion-text>
+            </ion-label>
+            <ion-icon name="chevron-forward-outline" slot="end" class="icon-text-size"
+              [hidden]="!wishListVisible"></ion-icon>
+          </ion-item>
+
+          <ion-item (click)="showAddress()">
+            <ion-thumbnail slot="start">
+              <ion-icon name="location"></ion-icon>
+            </ion-thumbnail>
+            <ion-label>
+              <ion-text class="text-header text-color">Delivery Address<Address></Address></ion-text>
+            </ion-label>
+            <ion-icon name="chevron-forward-outline" slot="end" [hidden]="!showAddressValue"
+              class="icon-text-size"></ion-icon>
+          </ion-item>
+
+          <ion-item (click)="showReturns()">
+            <ion-thumbnail slot="start">
+              <ion-icon name="return-down-back"></ion-icon>
+            </ion-thumbnail>
+            <ion-label>
+              <ion-text class="text-header text-color">Returns</ion-text>
+            </ion-label>
+            <ion-icon name="chevron-forward-outline" slot="end" class="icon-text-size"
+              [hidden]="!returnsVisible"></ion-icon>
+          </ion-item>
+
+          <ion-item (click)="showSignOut()" class="last-one">
+            <ion-thumbnail slot="start">
+              <ion-icon name="log-out"></ion-icon>
+            </ion-thumbnail>
+            <ion-label>
+              <ion-text class="text-header text-color">Sign Out</ion-text>
+            </ion-label>
+            <ion-icon name="chevron-forward-outline" slot="end" class="icon-text-size"
+              [hidden]="!signOutVisible"></ion-icon>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+
+      <ion-col [sizeMd]="8" [sizeSm]="8" [sizeXs]="12" class="section-2">
+        <app-account-info *ngIf="isIconVisible"></app-account-info>
+        <!-- <app-my-orders *ngIf="myOrderesVisible">My Orders Section Here</app-my-orders> -->
+        <h2 *ngIf="cartVisible">Cart Section Here</h2>
+        <h2 *ngIf="returnsVisible">Returns Section Here</h2>
+        <app-saved-address *ngIf="showAddressValue"></app-saved-address>
+
+        <ng-container *ngIf="showAddressValue">
+          <app-delivery-addresses (updateAddressEmitter)="getAddress($event)"></app-delivery-addresses>
+          <app-add-address-modal></app-add-address-modal>
+          <app-edit-address-modal [items]="editItems"></app-edit-address-modal>
+        </ng-container>
+        <!-- <app-my-orders-component *ngIf="myOrderesVisible"></app-my-orders-component> -->
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+  <app-footer></app-footer>
+</ion-content>

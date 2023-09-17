@@ -1,0 +1,48 @@
+.text-bold {
+    font-weight: bolder;
+}
+.delivery-1 {
+    opacity: 0.7;
+    font-size: 16px;
+}
+.col-1:hover {
+    background-color: #ff5c01;
+    cursor: pointer;
+    .date-text-1{
+        color: white;
+    }
+};
+
+.opacity {
+    opacity: 0.7;
+}
+.text-2 {
+    font-size: 16px;
+}
+
+.line-space {
+    line-height: 0px;
+}
+.text-font {
+    font-size: 14px;
+}
+.btn-a1 {
+    width: 230px;
+    height: 40px;
+    border: 1px solid rgb(170, 168, 168);
+    border-radius: 10px;
+    color: black;
+    text-transform: capitalize;
+}
+.btn-a1-2 {
+    background-color: #ff5c01;
+    color: white;
+}
+.box-s {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+#calendar{
+    cursor: pointer;
+}

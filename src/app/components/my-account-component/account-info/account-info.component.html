@@ -1,0 +1,43 @@
+<h1>Account Information</h1>
+
+<form [formGroup]="editForm">
+
+  <ion-list lines="none">
+
+    <ion-item>
+      <ion-label>
+        <p>First Name</p>
+        <input placeholder="Enter First text" formControlName="firstName" class="full-width">
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <p>Last Name</p>
+        <input placeholder="Enter Last text" formControlName="lastName" class="full-width">
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <p>Email Id</p>
+        <input placeholder="Enter emial id" formControlName="email" class="full-width">
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <p>Mobile Number</p>
+        <input placeholder="Enter Phone Number" formControlName="phoneNumber" class="full-width">
+      </ion-label>
+    </ion-item>
+
+    <ion-item class="item-last">
+      <ion-label>
+        <button (click)="onEditUser()">Edit</button>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+
+</form>

@@ -1,0 +1,103 @@
+<!-- <ion-footer> -->
+<!-- <ion-toolbar> -->
+<div class="footer-box">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" [sizeSm]="12" [sizeMd]="4">
+        <ion-title class="text-color-black footer-header footer-sx">{{
+          footerContent.informationData.title
+          }}</ion-title>
+        <ion-grid>
+          <ion-row *ngFor="let link of footerContent.informationData.information">
+            <ion-col class="text-color-black link-opacity link-01 footer-sx" (click)="gotoPage(link)">
+              {{ link?.link1 }}</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+      <ion-col size="12" [sizeSm]="12" [sizeMd]="8">
+        <ion-title class="footer-header"><span class="text-color-black">{{ footerContent.categoriesData.title1
+            }}</span><span class="see-all">{{ footerContent.categoriesData.title2 }}</span></ion-title>
+        <ion-grid>
+          <ion-row *ngFor="let link of footerContent.categoriesData.categories">
+            <ion-col class="text-color-black link-opacity link-01" (click)="gotoCatePage(link?.link1)">{{ link?.link1?.cat }}</ion-col>
+            <ion-col class="text-color-black link-opacity link-01" (click)="gotoCatePage(link?.link2)">{{ link?.link2?.cat }}</ion-col>
+            <ion-col class="text-color-black link-opacity link-01" (click)="gotoCatePage(link?.link3)">{{ link?.link3?.cat }}</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="privacy-box">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" [sizeMd]="4">
+          <p class="text-color-black privacy link-opacity">
+            {{ footerContent.privacyAndSocialMedia.description }}
+          </p>
+        </ion-col>
+        <ion-col size="12" [sizeMd]="4">
+          <div class="app-image">
+            <div>
+              <ion-title class="text-color-black app">{{
+                footerContent.privacyAndSocialMedia.downloadApp.title
+                }}</ion-title>
+            </div>
+            <div>
+              <a target="_blank" *ngFor="
+                  let element of footerContent.privacyAndSocialMedia.downloadApp
+                    .list
+                " [href]="element.url">
+                <img [src]="element.image" alt="" class="image" />
+              </a>
+            </div>
+          </div>
+        </ion-col>
+        <ion-col size="12" [sizeMd]="4" class="text-color-black link-opacity">
+          <ion-grid>
+            <ion-row>
+              <ion-col *ngFor="
+                  let element of footerContent.privacyAndSocialMedia
+                    .socialIcons;
+                  let i = index
+                ">
+                <a [href]="element.url" target="_blank">
+                  <div class="social-box">
+                    <img [src]="element.icon" alt="" class="social-icon" />
+                  </div>
+                </a>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div class="bottom-text">
+      <p class="privacy text-color-black link-opacity">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus
+        numquam impedit unde esse labore provident, dolores amet? Veritatis
+        tempore consequuntur, eius doloribus optio necessitatibus corrupti
+        ducimus! Quasi quibusdam quas modi maiores architecto ducimus eos
+        adipisci consequuntur doloribus quo accusamus sapiente nobis rem
+        laborum, alias expedita obcaecati numquam, distinctio similique ipsum
+        eaque aspernatur eum. Atque distinctio dolores, autem aliquam ducimus
+        minus voluptate consequatur perspiciatis, qui officiis delectus
+        consectetur vel enim incidunt aut recusandae, ratione rerum tempore hic
+        facere tempora iste! Dolorem minus nesciunt magni quis iusto, dolore et
+        recusandae exercitationem velit distinctio numquam dolores ab ea maxime
+        quisquam, doloremque, itaque veniam corrupti! Iste voluptatum molestiae
+        facilis iusto dolorum praesentium minima, nulla sunt soluta hic optio
+        culpa ipsam nam sint, quos ipsum commodi ad alias voluptate numquam
+        fugiat similique provident. Obcaecati autem minus, ab aspernatur
+        quisquam labore facilis quia at voluptatem amet saepe! Consectetur
+        excepturi itaque sit, magni perspiciatis voluptatibus qui molestias
+        asperiores voluptate ipsa totam amet nobis cupiditate autem iure, aut
+        numquam non eveniet? Nihil repellendus laborum animi in eum minima eius,
+        odit nemo fugit cupiditate ipsum. Animi quaerat non voluptas tenetur
+        sunt, quibusdam soluta quas officiis? Eligendi unde, aliquid repellendus
+        iusto placeat iure ipsa, magnam cum dolor culpa velit! Mollitia?
+      </p>
+    </div>
+  </div>
+</div>
+<!-- </ion-toolbar> -->
+<!-- </ion-footer> -->

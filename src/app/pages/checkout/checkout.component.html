@@ -1,0 +1,70 @@
+<app-header></app-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+    <app-bread-crumb [breadCrumbs]="breadCrumbs"></app-bread-crumb>
+  <div class="cart-box">
+    <h4 class="title-cart">Checkout</h4>
+  </div>
+  <div class="cart-section">
+    <ion-grid>
+      <ion-row>
+        <ion-col [sizeSx]="12" [sizeSm]="12" [sizeMd]="8">
+          <ion-card>
+            <ion-item lines="none">
+              <div class="box-s">
+                <h3 class="text-color-black text-bold text-font">Delivery Address</h3>
+                <button class="add-address-btn">
+                  <ion-icon name="pencil-outline" class="pencil"></ion-icon>
+                </button>
+              </div>
+            </ion-item>
+            <ion-item lines="none">
+              <span class="text-color-black text-bold">Pandit</span><span class="checkout-1">Home</span>
+            </ion-item>
+            <ion-item lines="none">
+              <p class="text-color-black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quos porro
+                tempora esse quibusdam beatae impedit praesentium! Molestias et ullam accusantium veniam, omnis aliquam
+                est necessitatibus voluptatibus natus? Quidem, voluptatum beatae voluptatem culpa nisi accusamus dolorem
+                rem assumenda. In, reiciendis. Officia similique quae delectus consectetur laborum eligendi optio,
+                quibusdam tempore quaerat, at fugit obcaecati modi dolore natus expedita illo. Sapiente, qui.</p>
+            </ion-item>
+          </ion-card>
+          <!-- checkout type -->
+          <ion-card>
+            <div class="text-color-black">
+              <h3 class="text-color-black text-bold">Checkout Type</h3>
+              <ion-button fill="clear" class="btn-a1" [ngClass]="{'btn-a1-2':isExistingOrder}"
+                (click)="onExistingOrder()">Existing Order</ion-button>
+              <ion-button fill="clear" class="btn-a1" [ngClass]="{'btn-a1-2':isNewOrder}" (click)="onNewOrder()">New
+                Order</ion-button>
+            </div>
+            <select class="zip-code" *ngIf="isExistingOrder" (change)="onChangeZipCode($event)">
+              <option value="" selected disabled>Select</option>
+              <option value="750016">750016</option>
+              <option value="67852">67854</option>
+            </select>
+            <ng-container *ngIf="isZipCode">
+              <div class="pre-o-bx">
+                <h3 class="text-color-black text-bold">Previous Ordered proucts</h3>
+                <app-cart-product [cart]="false" [checkout]="true" [items]="items"></app-cart-product>
+              </div>
+            </ng-container>
+          </ion-card>
+          <!-- checkout type -->
+          <ng-container *ngIf="isZipCode">
+            <app-existing-order></app-existing-order>
+          </ng-container>
+          <ng-container *ngIf="isNewOrder">
+            <app-new-order (addTipEmitter)="getTip($event)"></app-new-order>
+          </ng-container>
+          <ng-container *ngIf="isNewOrder || isZipCode">
+            <app-mhg-coupon-payment-comments (addRewardEmitter)="getRewards($event)" (addCouponEmitter)="getCouponDiscount($event)"></app-mhg-coupon-payment-comments>
+          </ng-container>
+        </ion-col>
+        <ion-col [sizeSx]="12" [sizeSm]="12" [sizeMd]="4" class="fixed-1">
+          <app-payment-order-summary [total]="total" [button]="button" [title]="title"
+            id="checkout-content"></app-payment-order-summary>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

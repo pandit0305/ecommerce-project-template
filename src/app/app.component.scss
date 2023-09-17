@@ -1,0 +1,16 @@
+ion-app{
+  background-color: #e5ab8c;
+}
+ion-spinner {
+  --color: #ff5c01;
+  width: 100px;
+  height: 100px;
+  opacity: 0.9;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform: -webkit-translate(-50%, -50%);
+  transform: -moz-translate(-50%, -50%);
+  transform: -ms-translate(-50%, -50%);
+}

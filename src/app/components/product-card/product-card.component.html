@@ -1,0 +1,62 @@
+<div class="grid-box" *ngIf="!isLoading">
+  <ion-card class="ion-no-padding ion-no-margin" *ngFor="let item of items;let i = index;">
+    <ion-icon name="heart-outline" size="large" class="heart-outline" (click)="addWishlist(item)"
+      *ngIf="!item?.isWishlist"></ion-icon>
+    <ion-icon name="heart" size="large" class="heart" *ngIf="item?.isWishlist"
+      (click)="removeFromWishList(item)"></ion-icon>
+    <ion-card-content class="img-01" (click)="getProductItem(item)">
+      <img [src]="item?.image" alt="">
+    </ion-card-content>
+    <ion-card-header class="text-center">
+      <p class="text-color-black font-bold">{{item?.title}}</p>
+      <p class="text-color-black font-bold">{{item?.weight}}</p>
+    </ion-card-header>
+    <div class="cart-bt">
+      <div>
+        <p class="text-color-black price-cd font-bold" *ngIf="!item?.offer">
+          &#x20B9;
+          {{ item?.quantity == 0 ? item?.price : item?.price * item?.quantity }}
+        </p>
+        <p class="text-color-black price-cd font-bold" *ngIf="item?.offer">
+          &#x20B9;
+          {{ item?.quantity == 0 ? item?.price : item?.price * item?.quantity }}
+        </p>
+        <p class="text-color-black price-cd font-bold" *ngIf="item?.offer">
+          &#x20B9;
+          {{
+          (item?.quantity == 0 ? item?.price : item?.price * item?.quantity) -
+          ((item?.quantity == 0 ? item?.price : item?.price * item?.quantity) *
+          item?.discount) /
+          100
+          }}
+        </p>
+      </div>
+      <div>
+        <ion-button class="add-btn" fill="clear" (click)="addToCart(item)" *ngIf="!item?.isCart || item?.quantity == 0">ADD</ion-button>
+        <div *ngIf="item?.isCart && item?.quantity && item.id != 5">
+          <app-cart-button [item]="item"></app-cart-button>
+        </div>
+      </div>
+    </div>
+  </ion-card>
+</div>
+<div class="grid-box" *ngIf="isLoading">
+  <ion-card class="ion-no-padding ion-no-margin" *ngFor="let item of items;let i = index;">
+    <ion-skeleton-text [animated]="true" class="icon-sk"></ion-skeleton-text>
+    <ion-card-content>
+      <ion-skeleton-text [animated]="true" style="width: 80%; height: 120px;"></ion-skeleton-text>
+    </ion-card-content>
+    <ion-card-header>
+      <ion-skeleton-text [animated]="true" style="width: 80%; height: 10px; margin-left: 10%"></ion-skeleton-text>
+      <ion-skeleton-text [animated]="true" style="width: 80%; height: 10px; margin-left: 10%"></ion-skeleton-text>
+    </ion-card-header>
+    <div class="cart-bt">
+      <div>
+        <ion-skeleton-text [animated]="true" style="width: 55px; height: 30px;"></ion-skeleton-text>
+      </div>
+      <div>
+        <ion-skeleton-text [animated]="true" style="width: 55px; height: 30px;"></ion-skeleton-text>
+      </div>
+    </div>
+  </ion-card>
+</div>

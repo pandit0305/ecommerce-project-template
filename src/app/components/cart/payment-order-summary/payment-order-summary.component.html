@@ -1,0 +1,18 @@
+<ion-card class="ion-no-padding">
+  <div class="text-color-black payment-01">
+    <h3 class="text-bold payment-title">{{ title }}</h3>
+    <div class="box-s">
+      <p>Sub Total</p>
+      <p class="payment-title">${{ total }}</p>
+    </div>
+    <p>Delivery free</p>
+    <p class="payment-free">Free delivery on first orders</p>
+    <div class="box-s">
+      <p class="text-bold">Total</p>
+      <p class="text-bold payment-title">${{ total }}</p>
+    </div>
+  </div>
+</ion-card>
+<div>
+  <ion-button class="checkout-btn" fill="clear" id="address-menu" expand="block" (click)="openEndMenu()">{{ button }}</ion-button>
+</div>

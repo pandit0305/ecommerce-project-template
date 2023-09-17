@@ -1,0 +1,29 @@
+<!-- shipping mode -->
+<ion-card>
+  <h3 class="text-color-black text-bold">Shipping Mode</h3>
+
+  <ion-button fill="clear" class="btn-a1" [ngClass]="{'btn-a1-2':isDelivery}"
+    (click)="onDelivery()">Delivery</ion-button>
+  <ion-button fill="clear" class="btn-a1" [ngClass]="{'btn-a1-2':isPickup}" (click)="onPickup()">Pickup</ion-button>
+  <ion-button fill="clear" class="btn-a1" [ngClass]="{'btn-a1-2':isTwoHourDelivery}" (click)="onTwoHourDelivery()">Two
+    Hour Delivery</ion-button>
+
+  <!-- delivery mode -->
+  <ng-container *ngIf="isDelivery">
+    <app-delivery-mode [title]="title"></app-delivery-mode>
+  </ng-container>
+  <!-- delivery mode -->
+
+  <!-- pickup-mode -->
+  <ion-item lines="none" class="cart-btn-box1" *ngIf="isPickup">
+    <div class="box-s">
+      <h3 class="text-color-black text-bold">Pickup Time</h3>
+      <h3 class="text-color-black text-bold">14:00:00 - 16:00:00</h3>
+    </div>
+  </ion-item>
+  <!-- pickup-mode -->
+</ion-card>
+<!-- shipping mode -->
+<ng-container *ngIf="isPickup">
+  <app-pickup-mode></app-pickup-mode>
+</ng-container>

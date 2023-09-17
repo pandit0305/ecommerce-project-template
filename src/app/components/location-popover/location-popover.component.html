@@ -1,0 +1,15 @@
+
+<div id="popover-1">
+  <!-- <ng-template> -->
+    <div class="wrapper">
+      <h1 class="text-color-black text-1">Select Delivery Location</h1>
+      <div class="box-04">
+        <input type="radio" class="cursor" [checked]="newLocation=='DALLAS'" name="radio-btn-1" value="DALLAS" (change)="onChangeLocation($event)" /><label class="text-color-black radio-1">Dallas</label>
+        <input type="radio" class="cursor" name="radio-btn-1" [checked]="newLocation=='AUSTIN'" value="AUSTIN" (change)="onChangeLocation($event)"/><label class="text-color-black radio-1">Astin</label>
+      </div>
+      <div class="box-04 ">
+        <ion-button (click)="dismissPopover()" class="update-btn bg-color border-r" fill="clear">UPDATE LOCATION</ion-button>
+      </div>
+    </div>
+  <!-- </ng-template> -->
+</div>

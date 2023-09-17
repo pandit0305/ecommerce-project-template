@@ -1,0 +1,57 @@
+<ion-menu side="start" menuId="rightMenu" contentId="rightMenu" type="overlay">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-toggle>
+          <ion-icon name="chevron-back" class="text-color" style="cursor: pointer;"></ion-icon>
+        </ion-menu-toggle>
+      </ion-buttons>
+      <ion-title class="text-color text-title">{{ appPages.items.heading }}</ion-title>
+      <ion-buttons slot="end">
+        <ion-menu-toggle>
+          <ion-title class="sign-in" (click)="signIn()">{{ token?'SignOut':'SignIn' }}</ion-title>
+        </ion-menu-toggle>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-content">
+    <div>
+      <ion-list lines="none">
+        <div *ngFor="let menu of appPages.menus;">
+          <ion-menu-toggle>
+            <ion-item [routerLink]="[menu.url]" [id]="menu.id" [expand]="menu.expand" (click)="openCheckDelivery(menu.isCheck)">
+              <ion-icon [name]="menu.icon" [color]="menu.color" *ngIf="!menu.isIcon"></ion-icon>
+              <ion-label [class]="menu.style">{{ menu.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <div class="hr-line"></div>
+        </div>
+      </ion-list>
+    </div>
+    <div style="margin-top: 50px;">
+      <ion-list lines="none">
+        <ion-item>
+          <ion-title class="text-color text-title">
+            {{ appPages.items.downloadApp.text }}
+          </ion-title>
+        </ion-item>
+        <ion-item>
+          <a *ngFor="let element of appPages.items.downloadApp.list;" target="_blank" [href]="element.url">
+            <img [src]="element.image" alt="" class="image">
+          </a>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div style="margin-top: 50px;">
+      <ion-list lines="none">
+        <ion-item>
+          <img [src]="appPages.items.logo" alt="" style="width: 60px;">
+        </ion-item>
+        <ion-item>
+          <p class="para">{{appPages.items.para}}
+          </p>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-content>
+</ion-menu>

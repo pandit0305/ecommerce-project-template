@@ -1,0 +1,70 @@
+<div class="wrapper">
+  <form [formGroup]="form">
+    <ion-card>
+      <ion-card-header>
+        <ion-icon name="arrow-back" class="back-btn" (click)="gotoLogin()"></ion-icon>
+        <ion-card-title class="h2">Login</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item lines="none">
+          <p *ngIf="isOtpMessage" class="text-color-green">
+            {{ isOtpMessage }}
+          </p>
+          <ion-label class="text-danger fs"
+            *ngIf="email.errors?.['required'] && (email.dirty || email.touched || isSubmit)">This is
+            required.</ion-label>
+          <ion-label class="text-danger fs" *ngIf="email.errors?.['emailPhoneValidation']">Invalid
+            email.</ion-label>
+        </ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-item lines="none">
+              <ion-label>
+                <input types="text" class="text-color-black text-fields" formControlName="email"
+                  placeholder="E-mail Address*">
+              </ion-label>
+            </ion-item>
+          </ion-row>
+        </ion-grid>
+        <ng-container *ngIf="isOtp">
+          <ion-item lines="none">
+            <ion-label>
+              <input types="text" class="text-color-black text-fields" formControlName="otp" placeholder="Otp*"
+                [maxlength]="6">
+              <ion-label class="text-danger fs" *ngIf="isError">Invalid
+                Otp</ion-label>
+            </ion-label>
+          </ion-item>
+          <ion-label class="button2" *ngIf="isOtp">
+            <ion-button class="header6" [ngClass]="{'opacity':isLoading}" fill="clear" size="default"
+              (click)="onSubmit()">
+              <span class="loader" *ngIf="isLoading"></span>{{ isLoading? 'Submitting':'Submit'}}</ion-button>
+          </ion-label>
+        </ng-container>
+        <ng-container *ngIf="!isOtp">
+          <ion-label class="button2">
+            <ion-button class="header6" [ngClass]="{'opacity':isLoading}" fill="clear" size="default"
+              (click)="sendOtp()">
+              <span class="loader" *ngIf="isLoading"></span>{{ isLoading? 'Sending Otp':'Send Otp'}}</ion-button>
+          </ion-label>
+        </ng-container>
+
+        <ion-item lines="none">
+          <ion-label class="button2">
+            <p class="text-0x">Login With <span class="text-h cursor" (click)="loginWithMobileNo()">Mobile
+                No</span></p>
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label>
+            <h4 class="text-h cursor text-center" (click)="forgotPassword()">Forgot
+              email/password</h4>
+          </ion-label>
+        </ion-item>
+        <h4 class="text-0x">Don't have an account? <span class="signup" (click)="openSignupModel()" expand="block">Sign
+            Up</span>
+        </h4>
+      </ion-card-content>
+    </ion-card>
+  </form>
+</div>

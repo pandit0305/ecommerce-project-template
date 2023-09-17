@@ -1,0 +1,231 @@
+ion-card {
+    width: 100%;
+    height: fit-content;
+    border-radius: 25px;
+    box-shadow: none;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.signup-1 {
+    font-size: 23px;
+}
+
+ion-input {
+    width: 100%;
+}
+
+.code-li {
+    margin-top: -10px;
+    margin-left: 15px;
+}
+
+.flag {
+    width: fit-content;
+    height: fit-content;
+    margin-top: 6px;
+    margin-left: 10px;
+
+}
+
+.drop-down {
+    border-radius: 5px;
+    background-color: white;
+    position: absolute;
+    z-index: 1000;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.select-country {
+    max-width: fit-content;
+    height: 150px;
+    overflow-y: scroll;
+}
+
+.c-1 {
+    display: flex;
+    cursor: pointer;
+}
+
+.cod-01 {
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.flag-ar {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.flag-ar:hover {
+    background-color: rgb(235, 229, 229);
+}
+
+.ar-c {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.address-text {
+    font-size: 14px;
+    padding: 20px 10px;
+    background-color: white;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgb(209, 203, 203);
+}
+
+.address-text:focus {
+    outline: none;
+}
+
+.note-1 {
+    color: grey;
+    font-size: 13px;
+}
+
+input {
+    width: 18px;
+    height: 18px;
+    margin-left: 5px;
+}
+
+.text-0s {
+    font-size: 15px;
+    margin-left: 10px;
+    font-weight: bold;
+    opacity: 0.7;
+}
+
+.bx-0 {
+    margin-top: -20px;
+}
+
+.box-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.checkout-btn {
+    width: fit-content;
+    text-transform: capitalize;
+    background-color: #ff5c01;
+    color: white;
+    padding: 10px 15px;
+    height: fit-content;
+    border-radius: 25px;
+    font-size: 12px;
+    transition: 0.4s;
+}
+
+.checkout-btn:hover {
+    background-color: #f5cab1;
+    color: #ff5c01;
+}
+
+.text-0x {
+    text-align: center;
+    color: grey;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.signup {
+    color: #ff5c01;
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.danger {
+    border: 1px solid #ff5c01;
+}
+
+.loader {
+    margin-right: 5px;
+    border: 2px solid #ff5c01;
+    border-radius: 50%;
+    border-top: 2px solid #080808;
+    width: 15px;
+    height: 15px;
+    animation: spinner 2s linear infinite;
+}
+
+.opacity {
+    opacity: 0.5;
+}
+
+.fs {
+    font-size: 10px;
+    margin-left: 10px;
+    position: absolute;
+    z-index:1000;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width:1024px) {
+    ion-card {
+        width: 100%;
+        height: 520px;
+        border-radius: 25px;
+        box-shadow: none;
+        overflow-y: scroll;
+    }
+
+    .display-none {
+        display: none;
+    }
+
+    .bx-0 {
+        margin-top: 0px;
+    }
+}
+
+@media (max-width:768px) {
+    .signup-1 {
+        font-size: 16px;
+    }
+
+    .text-0s {
+        font-size: 12px;
+    }
+
+    ion-card {
+        width: 330px;
+        height: 500px;
+        border-radius: 25px;
+        box-shadow: none;
+        overflow-y: scroll;
+    }
+
+    .display-none {
+        display: none;
+    }
+
+    .bx-0 {
+        margin-top: 0px;
+    }
+}

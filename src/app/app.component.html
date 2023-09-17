@@ -1,0 +1,11 @@
+<ion-app>
+  <!-- <ion-split-pane contentId="main-content"> -->
+  <ng-container *ngIf="isLoading">
+    <ion-spinner name="lines-sharp"></ion-spinner>
+  </ng-container>
+  <ng-container *ngIf="!isLoading">
+    <app-side-menu ></app-side-menu>
+    <ion-router-outlet id="rightMenu"></ion-router-outlet>
+  </ng-container>
+  <!-- </ion-split-pane> -->
+</ion-app>

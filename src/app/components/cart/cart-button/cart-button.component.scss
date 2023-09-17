@@ -1,0 +1,53 @@
+
+.cart-bx{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-s{
+    display: flex;
+    // justify-content: space-between;
+}
+.icon-btn{
+    width: 10px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    padding: 15px;
+    color:black;
+    margin-top: -10px;
+    margin-left: -9px;
+    background-color:#ff5c01;
+    justify-content: center;
+    align-items: center;
+}
+.cart-btn{
+    display: flex;
+    padding: 20px;
+     margin-top: -10px;
+     color: black;
+    justify-content: center;
+    align-items: center;
+    padding-right: 14px;
+    width: 10px;
+    height: 10px;
+    padding-right: 9px;
+    padding-left: 2px;
+}
+.noOfItem{
+    font-size: 14px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+// ngClass
+.btnSize{
+    width: 40px;
+    height: 40px;  
+    font-size: 47px;
+    padding: 5px;
+}
+.count-item{
+    font-size: 27px;
+}

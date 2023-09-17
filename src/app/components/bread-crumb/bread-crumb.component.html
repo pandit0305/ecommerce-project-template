@@ -1,0 +1,8 @@
+<div class="bread-crumb">
+  <ion-breadcrumbs [maxItems]="maxBreadcrumbs" (ionCollapsedClick)="expandBreadcrumbs()">
+    <ion-breadcrumb  [href]="['/home']">Home</ion-breadcrumb>
+    <a *ngFor="let link of breadCrumbsDetails;">
+      <ion-breadcrumb  [href]="[link.url]">{{ link.title }}</ion-breadcrumb>
+    </a>
+  </ion-breadcrumbs>
+</div>

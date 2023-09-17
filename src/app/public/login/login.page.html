@@ -1,0 +1,97 @@
+<div class="wrapper">
+  <form>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="h2">Login</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item lines="none">
+          <p *ngIf="submitAttempt" class="text-color-red error-t">
+            Please fill out details.
+          </p>
+        </ion-item>
+        <ion-grid>
+          <ion-row>
+            <ng-container *ngIf="isLoginwidthmobPassword">
+              <ion-col size="3" class="text-center">
+                <ion-label class="flag-ar" (click)="showDropDown()">
+                  <img [src]="this.flag" alt="" class="flag"><ion-icon name="caret-down" class="ar-c"></ion-icon>
+                </ion-label>
+              </ion-col>
+              <ion-col size="9">
+                <ion-label [formGroup]="form1">
+                  <ion-input type="text" class="text-color-black address-text" [maxlength]="10"
+                    formControlName="telephone" placeholder="Mobile Number*"></ion-input>
+                </ion-label>
+              </ion-col>
+            </ng-container>
+            <ng-container *ngIf="!isLoginwidthmobPassword">
+              <ion-col>
+                <ion-label [formGroup]="form">
+                  <ion-input type="email" formControlName="email" placeholder="Email*"
+                    class="text-color-black"></ion-input>
+                </ion-label>
+              </ion-col>
+            </ng-container>
+          </ion-row>
+          <ion-row class="drop-down" *ngIf="isShow">
+            <ion-col>
+              <div class="select-country">
+                <div class="c-1" *ngFor="let code of countries;" (click)="getCode(code)">
+                  <img [src]="code.flag" alt="" class="flag">
+                  <p class="cod-01">{{ code?.name }}</p>
+                  <p class="cod-01">{{ code?.code }} ({{ code?.countryId }})</p>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ng-container *ngIf="isLoginwidthmobPassword">
+              <ion-col>
+                <ion-label [formGroup]="form1">
+                  <ion-input type="Password" formControlName="password" placeholder="Password*"
+                    class="text-color-black"></ion-input>
+                </ion-label>
+              </ion-col>
+            </ng-container>
+            <ng-container *ngIf="!isLoginwidthmobPassword">
+              <ion-col>
+                <ion-label [formGroup]="form">
+                  <ion-input type="Password" formControlName="password" placeholder="Password*"
+                    class="text-color-black"></ion-input>
+                </ion-label>
+              </ion-col>
+            </ng-container>
+          </ion-row>
+        </ion-grid>
+        <br>
+        <ion-label class="button2">
+          <ion-button class="header6" [ngClass]="{'opacity':isLoading}" fill="clear" size="default" (click)="login()">
+            <span class="loader" *ngIf="isLoading"></span>{{ isLoading? 'Logging':'Login'}}</ion-button>
+        </ion-label>
+        <ion-item lines="none">
+          <ion-label>
+            <ion-text>
+              <p class="text-0x">Login with <span class="text-h cursor" (click)="loginWihmobileAndPassword()">{{
+                  !isLoginwidthmobPassword ? 'Mobile No' :'Email Id' }}</span></p>
+            </ion-text>
+          </ion-label>
+        </ion-item>
+
+        <ion-label class="button2">
+          <p (click)="loginWitOtp()" class="text-0x">Login With <span class="text-h cursor"
+              (click)="loginWitOtp()">OTP</span></p>
+        </ion-label>
+        <ion-item lines="none">
+          <ion-label>
+            <h4 class="text-h cursor text-center" (click)="forgotPassword()">Forgot
+              email/password</h4>
+          </ion-label>
+        </ion-item>
+        <h4 class="text-0x">Don't have an account? <span class="signup cursor" (click)="openSignupModel()"
+            expand="block">Sign Up</span>
+        </h4>
+      </ion-card-content>
+    </ion-card>
+  </form>
+</div>

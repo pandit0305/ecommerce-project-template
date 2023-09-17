@@ -1,0 +1,66 @@
+<!-- shipping mode -->
+<ion-card>
+  <h3 class="text-color-black text-bold">Shipping Mode</h3>
+  <ion-button fill="clear" class="btn-a1" [ngClass]="{'btn-a1-2':isDelivery}"
+    (click)="onDelivery()">Delivery</ion-button>
+  <ion-button fill="clear" class="btn-a1" [ngClass]="{'btn-a1-2':isPickup}" (click)="onPickup()">Pickup</ion-button>
+  <ion-button fill="clear" class="btn-a1" [ngClass]="{'btn-a1-2':isTwoHourDelivery}" (click)="onTwoHourDelivery()">Two
+    Hour Delivery</ion-button>
+  <!-- delivery mode -->
+  <ng-container *ngIf="isDelivery">
+    <app-delivery-mode></app-delivery-mode>
+  </ng-container>
+  <!-- delivery mode -->
+  <!-- pickup-mode -->
+  <ion-item lines="none" class="cart-btn-box1" *ngIf="isPickup">
+    <div>
+      <h3 class="text-color-black text-bold">Pickup from Warehouse</h3>
+      <h4 class="text-color-black delivery-1 opacity text-bold text-font">[QA Dallas] MyHomeGrocers,</h4>
+      <h4 class="text-color-black delivery-1 opacity text-bold text-font">112 Rose Ln, Suite M1, Frisco, TX 75034 INSTRUCTIONS:</h4>
+    </div>
+  </ion-item>
+  <!-- pickup-mode -->
+</ion-card>
+<!-- new order pickup -->
+<!-- shipping mode -->
+<ng-container *ngIf="isPickup">
+  <app-pickup-mode></app-pickup-mode>
+</ng-container>
+
+<ng-container *ngIf="isPickup">
+  <ion-card>
+    <app-delivery-mode [title]="title" [selectTime]="true" [calender]="true"></app-delivery-mode>
+  </ion-card>
+</ng-container>
+<!-- new order pickup -->
+<!-- add a tip -->
+<ion-card *ngIf="isDelivery">
+  <ion-item lines="none">
+    <h3 class="text-color-black text-bold">Add a Tip</h3>
+  </ion-item>
+  <ion-item lines="none">
+    <h4 class="text-color-black delivery-1 text-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero
+      ea maxime veniam id quasi excepturi dignissimos.</h4>
+  </ion-item>
+  <ion-grid>
+    <ion-row [formGroup]="checkoutFormGroup">
+      <ion-col [sizeMd]="2">
+        <input type="radio" name="addTip" value="5" class="radio-1" formControlName="addTip" />
+        <span class="pay01">$5</span>
+      </ion-col>
+      <ion-col [sizeMd]="2">
+        <input type="radio" name="addTip" value="10" class="radio-1" formControlName="addTip" />
+        <span class="pay01">$10</span>
+      </ion-col>
+      <ion-col [sizeMd]="8">
+        <ion-icon name="trash-outline" class="trash-1" (click)="onClear()"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-item lines="none" [formGroup]="checkoutFormGroup">
+    <ion-input class="text-color-black address-text" formControlName="customTip" placeholder="Add a Custom Tip"></ion-input>
+  </ion-item>
+  <div class="chk-1">
+    <button class="checkout-btn" fill="clear" (click)="addTip()">Add</button>
+  </div>
+</ion-card>

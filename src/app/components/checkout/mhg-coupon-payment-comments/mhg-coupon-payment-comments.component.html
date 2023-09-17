@@ -1,0 +1,61 @@
+
+<!-- mgh rewards -->
+<ion-card>
+  <ion-item lines="none">
+    <h3 class="text-color-black text-bold">MHG Rewards</h3>
+  </ion-item>
+  <ion-item lines="none">
+    <div class="box-s">
+      <h3 class="text-color-black text-bold opacity">Available balance</h3>
+      <h3 class="text-color-black text-bold">${{rewards}}</h3>
+    </div>
+  </ion-item>
+  <div class="chk-1">
+    <button class="checkout-btn" fill="clear" (click)="applyRewards()">Apply MHG Rewards</button>
+  </div>
+</ion-card>
+<!-- mgh rewards -->
+
+<!-- apply coupon -->
+<ion-card>
+    <ion-item lines="none">
+      <h3 class="text-color-black text-bold">Do you have a coupon?</h3>
+    </ion-item>
+    <ion-item lines="none" [formGroup]="couponForm">
+      <ion-input 
+      class="text-color-black address-text"  
+      placeholder="Enter Coupon Code" 
+      formControlName="couponCode"
+      ></ion-input>
+    </ion-item>
+  <div class="chk-1">
+    <button class="checkout-btn" fill="clear" (click)="applyCoupon()">Apply Coupon</button>
+  </div>
+</ion-card>
+<!-- apply coupon -->
+
+<!-- payment method -->
+<ion-card>
+  <ion-item lines="none">
+    <h3 class="text-color-black text-bold">Payment Method</h3>
+  </ion-item>
+  <ion-item lines="none">
+    <h4 class="text-color-black delivery-1 text-font">Your existing funds that are on hold will be released and
+      the new order Total will be put on hold.</h4>
+  </ion-item>
+  <ion-item lines="none">
+    <input type="radio" class="radio-1" /> <ion-label class="pay01">Credit Card / Debit Card</ion-label>
+  </ion-item>
+</ion-card>
+<!-- payment method -->
+
+<!-- comments -->
+<ion-card>
+  <ion-item lines="none">
+    <h3 class="text-color-black text-bold">Comments / Delivery Instructions</h3>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-textarea class="text-color-black address-text" placeholder="Write comment"></ion-textarea>
+  </ion-item>
+</ion-card>
+<!-- comments -->

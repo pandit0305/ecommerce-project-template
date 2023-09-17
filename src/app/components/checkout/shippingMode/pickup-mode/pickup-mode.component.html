@@ -1,0 +1,23 @@
+<ion-card>
+  <ion-item lines="none">
+    <h3 class="text-color-black text-bold">Pickup Location</h3>
+  </ion-item>
+  <!-- <google-map height="400px" width="750px" [center]="center" [zoom]="zoom" (mapClick)="moveMap($event)"
+    (mapMousemove)="move($event)">
+  </google-map>
+  <div>Latitude: {{display?.lat}}</div>
+   <div>Longitude: {{display?.lng}}</div> -->
+
+  <div>
+    <iframe 
+    src="https://maps.google.com/maps?q=dallas&t=&z=13&ie=UTF8&iwloc=&output=embed"
+    frameborder="0"
+    width="700"
+    height="400"
+    id="gmap-canvas"
+    scrolling="0"
+    marginheight="0"
+    marginwidth="0"
+    ></iframe>
+  </div>
+</ion-card>

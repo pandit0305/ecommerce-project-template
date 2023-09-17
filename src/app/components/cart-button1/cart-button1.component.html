@@ -1,0 +1,42 @@
+
+
+<ion-grid >
+  <ion-row >
+    <ion-col size="4">
+      <button  class="icon-btn" [disabled]="item?.quantity == 0" (click)="decreaseItem(item)">
+        -
+      </button>
+    </ion-col>
+    <ion-col size="4" class=" icon-btn cart-btn " style="font-size: 10px; " style="padding-left: 10px;">
+      {{ item?.quantity }}
+    </ion-col>
+    <ion-col size="4">
+      <button class="icon-btn "[disabled]="item?.quantity == 10" (click)="increaseItem(item)">
+        +
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<!-- <ion-grid class="cart-btn-box">
+  <ion-row>
+    <span>
+    <ion-col size="4">
+      
+      <button class="icon-btn" [ngClass]="{'cart-btn':item?.quantity>1, 'btnSize':btnSize}" [disabled]="item?.quantity==1" (click)="decreaseItme(item)">
+        <ion-button name="icon-btn" fill="clear"></ion-button>
+      </button>
+    </ion-col>
+    <ion-col class="icon-btn " [ngClass]="{'count-item':btnSize}" size="4">
+     <ion-button fill="clear" name=" icon-btn"> {{item?.quantity}} </ion-button>
+    </ion-col>
+    <ion-col size="4">
+      <button class="icon-btn " class="icon-btn " [ngClass]="{'btnSize':btnSize}" [disabled]="item?.quantity==10" (click)="increaseItem(item)">
+        <ion-button  name=" icon-btn"  fill="clear"></ion-button>
+      </button>
+
+    </ion-col>
+   </span>
+  </ion-row>
+</ion-grid>
+           -->

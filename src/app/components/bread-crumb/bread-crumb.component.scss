@@ -1,0 +1,28 @@
+.bread-crumb {
+    width: 90%;
+    margin: 6% auto;
+    margin-top: 30px;
+}
+
+ion-breadcrumb {
+    --color: black;
+    --color-active: #ff5c01;
+    --color-hover: #ff5c01;
+    font-weight: bold;
+}
+
+@media (max-width:768px) {
+    .bread-crumb {
+        width: 100%;
+        margin: 10% auto;
+        margin-top: 30px;
+    }
+
+    ion-breadcrumb {
+        --color: black;
+        --color-active: #ff5c01;
+        --color-hover: #ff5c01;
+        font-weight: bold;
+        font-size: 13px;
+    }
+}

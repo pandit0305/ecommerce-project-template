@@ -1,0 +1,165 @@
+.banner {
+    width: 100%;
+    margin-top: 8px;
+}
+
+swiper-container {
+    --swiper-navigation-size: 30px;
+    --swiper-navigation-top-offset: 50%;
+    --swiper-navigation-sides-offset: 10px;
+    --swiper-navigation-color: rgb(83, 82, 82);
+    --swiper-pagination-color: rgb(87, 85, 85);
+    --swiper-pagination-bullet-opacity: 1;
+}
+
+swiper-container::part(button-prev) {
+    background-color: black;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-weight: bold;
+    opacity: 0.5;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+}
+
+swiper-container::part(button-next) {
+    background-color: black;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-weight: bold;
+    opacity: 0.5;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+}
+
+.img-01 {
+    width: 100%;
+    height: fit-content;
+}
+
+ion-skeleton-text {
+    background-color: rgb(196, 192, 192);
+    width: auto;
+    height: 240px;
+}
+
+// max resolution
+@media all and (min-width:767px) {
+    .banner {
+        width: 100%;
+    }
+
+    .img-01 {
+        width: 100%;
+        height: fit-content;
+    }
+
+    ion-skeleton-text {
+        background-color: rgb(196, 192, 192);
+        width: auto;
+        height: 240px;
+    }
+}
+
+// min resolution
+@media all and (max-width:767px) {
+    swiper-container {
+        --swiper-navigation-size: none;
+        --swiper-navigation-top-offset: none;
+        --swiper-navigation-sides-offset: none;
+        --swiper-navigation-color:none;
+        --swiper-pagination-color:none;
+        --swiper-pagination-bullet-opacity: 1;
+    }
+    .banner {
+        width: 100%;
+    }
+
+    .img-01 {
+        width: 100%;
+        height: fit-content;
+    }
+
+    ion-skeleton-text {
+        background-color: rgb(196, 192, 192);
+        width: auto;
+        height: 140px;
+    }
+}
+
+/* For Tablet View */
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    .banner {
+        width: 100%;
+        margin: auto;
+    }
+
+    .img-01 {
+        width: 100%;
+        height: 150px;
+    }
+
+    ion-skeleton-text {
+        background-color: rgb(196, 192, 192);
+        width: auto;
+        height: 150px;
+    }
+
+}
+
+/* For Mobile Phones Portrait or Landscape View */
+@media all and (max-width: 640px) {
+    .banner {
+        width: 100%;
+        margin: auto;
+    }
+
+    .img-01 {
+        width: auto;
+        height: 150px
+    }
+
+    ion-skeleton-text {
+        background-color: rgb(196, 192, 192);
+        width: auto;
+        height: 150px;
+    }
+}
+
+/* For Mobile Portrait View */
+@media all and (max-width: 480px) and (orientation: portrait) {
+    .banner {
+        width: 100%;
+        margin: auto;
+    }
+
+    .img-01 {
+        width: auto;
+        height: 120px;
+    }
+
+    ion-skeleton-text {
+        background-color: rgb(196, 192, 192);
+        width: auto;
+        height: 120px;
+    }
+}
+
+/* For Mobile Landscape View */
+@media all and (max-width: 640px) and (orientation: landscape) {
+    .banner {
+        width: 100%;
+        margin: auto;
+    }
+
+    .img-01 {
+        width: auto;
+        height: 120px;
+    }
+
+    ion-skeleton-text {
+        background-color: rgb(196, 192, 192);
+        width: auto;
+        height: 120px;
+    }
+}

@@ -1,0 +1,113 @@
+.content-margin {
+  padding: 1% 5% 1% 5%;
+}
+
+.back-arrow {
+  opacity: 0.5;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.back-arrow:hover {
+  border-radius: 20px;
+  background-color: #f59758;
+}
+
+.header-text {
+  margin-left: 10px;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.text-bold {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.color-green {
+  font-size: 18px;
+  color: green;
+}
+
+.text-rating {
+  cursor: pointer;
+  border: 1px solid rgba($color: #000000, $alpha: 0.2);
+  padding: 10px 40px 10px 40px;
+  border-radius: 10px;
+}
+
+.list-left {
+  border-radius: 20px;
+  border: 1px solid rgba($color: #000000, $alpha: 0.2);
+}
+
+ion-item {
+  border-bottom: 1px solid rgba($color: #000000, $alpha: 0.2);
+  width: 95%;
+  margin: 0 auto;
+}
+
+.track-order-icons {
+  justify-content: flex;
+}
+
+ion-icon {
+  font-size: 20px;
+}
+
+.reorder-text {
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px 15px 5px 15px;
+  border: 1px solid rgba($color: #000000, $alpha: 0.2);
+}
+
+.circles {
+  height: 0.938em;
+  width: 0.938em;
+  border: 0.188em solid #000;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.active {
+  background-color: #ffa500;
+}
+
+.circle-desc-active {
+  font-weight: bold;
+}
+
+.bar {
+  width: 16%;
+  height: 0.063em;
+  margin-bottom: 0.469em;
+  border: 0.031em solid #000;
+  color: #000;
+  background-color: #000;
+  display: inline-block;
+  text-align: center;
+  margin: "0 auto";
+}
+
+.container {
+  width: 400px;
+  min-width: 320px;
+  margin: "0px auto";
+  text-align: center;
+}
+
+.circle-desc {
+  position: absolute;
+  top: 5.000em;
+  font-size: 1.125em;
+  width: auto;
+  max-width: 9.375em;
+  margin-left: -0.750em;
+}
+
+@media screen and (max-device-width: 767px){
+  .div-2{
+    margin-top: 20px;
+  }
+}

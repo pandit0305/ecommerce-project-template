@@ -1,0 +1,49 @@
+<ion-menu side="end" menuId="cart-menu" contentId="cart-menu">
+  <ion-content>
+    <ion-icon name="close" class="close-btn" size="large" (click)="onClose()"></ion-icon>
+    <ion-title class="text-color-black address-1">My Cart</ion-title>
+    <ion-card>
+      <div class="bxe-01">
+        <div class="bxe-02">
+          <h3 class="text-color-black address-2">Cart Items </h3>
+          <ion-icon name="reload-sharp" class="loader" (click)="loadCartItems()"></ion-icon>
+        </div>
+        <h3 class="color address-2">{{ items && items.length >0 ? items.length : 0 }} Items</h3>
+      </div>
+      <ion-grid id="items-list">
+        <ion-row *ngFor="let item of items;" class="ion-no-padding ion-no-margin">
+          <ion-col size="9" class="cart-bxs" (click)="gotoDetailPage(item)">
+            <ion-grid>
+              <ion-row>
+                <ion-col [sizeMd]="3" [sizeSm]="12" size="12">
+                  <img [src]="item?.image" alt="" class="small-image">
+                </ion-col>
+                <ion-col [sizeMd]="7" [sizeSm]="6" size="6">
+                  <p class="text-x">{{ item?.title }}</p>
+                </ion-col>
+                <ion-col [sizeMd]="2" [sizeSm]="6" size="6" class="box-s">
+                  <ion-label class="text-x">${{ item?.price}}
+                  </ion-label>
+                  <ion-icon name="close" class="multiple"></ion-icon>
+                  <ion-label class="text-x">{{item?.quantity}}
+                  </ion-label>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-col>
+          <ion-col size="3" class="box-s">
+            <ion-icon name="trash-outline" class="trash-1" size="large" (click)="deleteItem(item.id)"></ion-icon>
+          </ion-col>
+          <div class="hr-line"></div>
+        </ion-row>
+      </ion-grid>
+      <div class="bxe-01">
+        <h3 class="color address-2 h3-m">Total Amount to be Paid</h3>
+        <h3 class="text-color-black address-2 h3-m">${{ total }}</h3>
+      </div>
+      <div class="bx0">
+        <button class="checkout-btn" fill="clear" (click)="gotoCart()">Proceed to Cart</button>
+      </div>
+    </ion-card>
+  </ion-content>
+</ion-menu>

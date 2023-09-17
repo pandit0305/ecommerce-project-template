@@ -1,0 +1,100 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+
+  <app-bread-crumb [breadCrumbs]="breadCrumbs"></app-bread-crumb>
+
+
+  <div class="content-margin">
+    <ion-icon name="arrow-back" (click)="goBack()" class="back-arrow"></ion-icon>
+    <ion-text class="header-text">Order Details</ion-text>
+
+    <div class="row">
+      <div class="col-md-6">
+        <ion-text class="text-bold">order status : </ion-text>
+        <ion-text class="color-green">{{orderDetailsObject.status}}</ion-text><br><br>
+
+        <ion-text class="text-rating">Rate Your Order</ion-text><br><br>
+
+        <ion-text class="text-bold ">Delivery Address</ion-text><br>
+        <ion-text>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error, dolore soluta unde suscipit, magni
+          officia numquam magnam illum ut quas tempore nisi laboriosam nobis optio cumque molestias aut provident
+          dolores.</ion-text><br><br>
+
+        <ion-text class="text-bold">Order Detailes</ion-text><br>
+        <ion-list lines="none" class="list-left">
+          <ion-item>
+            <ion-label>Order id</ion-label>
+            <ion-text>{{orderDetailsObject.orderId}}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-label>Date Added</ion-label>
+            <ion-text>{{orderDetailsObject.dateAdded}}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-label>Sub Total</ion-label>
+            <ion-text>{{orderDetailsObject.subTotal}}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-label>Delivery Charges</ion-label>
+            <ion-text>{{orderDetailsObject.deliveryCharges}}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-label>Refundable Bags(1&times;1)</ion-label>
+            <ion-text>{{orderDetailsObject.refundableBags}}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-label>Total</ion-label>
+            <ion-text>{{orderDetailsObject.total}}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-label>COD Received</ion-label>
+            <ion-text>{{orderDetailsObject.codReceived}}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-label>Stripe Funds Received</ion-label>
+            <ion-text>{{orderDetailsObject.stripeFundsReceived}}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-label>Funds On Hold</ion-label>
+            <ion-text>{{orderDetailsObject.fundsOnHold}}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-label>Payment Method</ion-label>
+            <ion-text>{{orderDetailsObject.paymentMethod}}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-label>Shipping Method</ion-label>
+            <ion-text>{{orderDetailsObject.shippingMethod}}</ion-text>
+          </ion-item>
+        </ion-list>
+      </div>
+
+      <div class="col-md-6 div-2">
+        <ion-text class="text-bold">Track Order</ion-text><br>
+        <div class="track-order-icons">
+          <ion-text class="color-green">Delivered</ion-text>
+        </div><br>
+
+        <!-- Other Items -->
+        <ion-text class="text-bold">Other Items</ion-text><br>
+        <ion-list lines="none">
+          <ion-item *ngFor="let item of orderDetailsObject.items">
+            <ion-thumbnail slot="start">
+              <img [src]="item.image" />
+            </ion-thumbnail>
+            <ion-label>
+              <ion-text>{{item.productTitle}}</ion-text><br>
+              <ion-text class="text-bold">Rs 100</ion-text>
+            </ion-label>
+            <div>
+              <ion-text>Qty : </ion-text><ion-text>1</ion-text><br>
+              <ion-text class="reorder-text">Reorder</ion-text>
+            </div>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</ion-content>

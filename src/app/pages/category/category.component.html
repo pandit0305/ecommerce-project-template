@@ -1,0 +1,37 @@
+<app-header></app-header>
+<ion-content [fullscreen]="true">
+  <ion-card class="bread-c">
+    <app-bread-crumb [breadCrumbs]="breadCrumbs"></app-bread-crumb>
+  </ion-card>
+  <ion-grid class="ion-grid">
+    <ion-row>
+      <ion-col size="2" class="category-box">
+        <div class="fixed-1">
+          <div class="cate-box-x">
+            <ion-item lines="none" class="ion-item">
+              <ion-icon name="list"></ion-icon>
+              <ion-label class="cate-1">Category</ion-label>
+            </ion-item>
+            <ion-list class="ion-list">
+              <div *ngFor="let item of subCategories;" class="row-1" lines="none" (click)="gotoPages(item)">
+                <img [src]="item.image" alt="image" class="img-2">
+                <p class="text-color-black">{{ item?.title }}</p>
+              </div>
+            </ion-list>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col size="10">
+        <ion-item lines="none" class="fixed-cate-title">
+          <p class="text-color-black cate-title">{{ name == "" ? category?.title : name }}</p>
+        </ion-item>
+        <div class="x-top">
+            <app-shop-by-category [categories]="items"></app-shop-by-category>
+            <ng-container *ngIf="category?.isProduct">
+              <app-product-card [items]="category?.products"></app-product-card>
+            </ng-container>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

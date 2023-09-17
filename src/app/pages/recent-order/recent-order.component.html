@@ -1,0 +1,82 @@
+<app-header></app-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <app-bread-crumb [breadCrumbs]="breadCrumbs"></app-bread-crumb>
+  <ion-grid [formGroup]="recentOrderForm" class="ion-grid">
+    <ion-row>
+      <ion-col [sizeMd]="4" [sizeSm]="6" [sizeXs]="12">
+        <ion-item lines="none">
+          <ion-label>
+            <p class="text-color-black">From Date</p>
+            <input class="input" type="date" formControlName="fromDate" />
+          </ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col [sizeMd]="4" [sizeSm]="6" [sizeXs]="12">
+        <ion-item lines="none">
+          <ion-label>
+            <p class="text-color-black">To Date</p>
+            <input class="input" type="date" formControlName="toDate" />
+          </ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col [sizeMd]="4" [sizeSm]="12" [sizeXs]="12">
+        <ion-item lines="none">
+          <ion-label>
+            <p class="text-color-black">Last No Orders</p>
+            <input class="input" type="number" min="0" formControlName="lastNOrders" placeholder="Last N Orders" />
+          </ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col [sizeMd]="12" [sizeSm]="12" [sizeXs]="12">
+        <button class="checkout-btn search" fill="clear" (click)="search()">Search</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <h2 class="text-color-black text-sx">Recent Order Products</h2>
+  <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="text-c" [sizeMd]="2" [sizeSm]="4" [sizeXs]="4">
+          Order Id
+        </ion-col>
+        <ion-col class="text-c" [sizeMd]="7" [sizeSm]="4" [sizeXs]="4">
+          Product Name
+        </ion-col>
+        <ion-col class="text-c" [sizeMd]="3" [sizeSm]="4" [sizeXs]="4">
+          Add To Cart
+        </ion-col>
+      </ion-row>
+      <ion-Row *ngFor="let item of recentOrderProducts;">
+        <ion-col class="text-r" [sizeMd]="2" [sizeSm]="4" [sizeXs]="4">
+          {{item?.orderId}}
+        </ion-col>
+        <ion-col [sizeMd]="7" [sizeSm]="4" [sizeXs]="4">
+          <ion-grid>
+            <ion-row>
+              <ion-col [sizeMd]="2" [sizeSm]="12" [sizeXs]="12">
+                <img [src]="item?.image" [alt]="item?.title">
+              </ion-col>
+              <ion-col [sizeMd]="10" [sizeSm]="12" [sizeXs]="12">
+                <h3 class="ion-title">{{item?.title}}</h3>
+                <h3 *ngIf="item?.outOfStock" class="outOfStock">Out of Stock</h3>
+                <h4 class="text-color-black">${{item?.price}}.00</h4>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+        <ion-col class="text-r ion-no-padding" [sizeMd]="3" [sizeSm]="4" [sizeXs]="4">
+          <ion-icon name="cart" size="large" [ngClass]="{'opacity':item?.isLoading && item?.isCart}"
+            (click)="onClickCart(item)" *ngIf="!item?.outOfStock && !item?.isCart"></ion-icon>
+          <p class="addtcart" *ngIf="item?.isCart && !item?.isLoading">Added To Cart</p>
+          <div class="loader" *ngIf="item?.isCart && item?.isLoading"></div>
+          <div *ngIf="item?.outOfStock">
+            <ion-icon name="chatbox-ellipses" class="chat" size="large" (click)="notifyProduct(item)"
+              ></ion-icon>
+          </div>
+        </ion-col>
+      </ion-Row>
+    </ion-grid>
+  </ion-card>
+</ion-content>

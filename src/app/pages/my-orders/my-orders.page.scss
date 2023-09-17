@@ -1,0 +1,33 @@
+h1{
+    margin: 1% 0 0 5%; 
+}
+ion-list {
+    border: 1px solid rgba($color: #000000, $alpha: 0.2);
+    border-radius: 25px;
+    margin: 1% 5% 5% 6%;
+    padding: 1%;
+    width: 80%;
+}
+
+ion-icon {
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+.hr-line {
+    width: 100%;
+    border: 1px solid black;
+    opacity: 0.1;
+    margin: auto;
+}
+p{
+    font-size: 18px;
+}
+ion-text{
+    font-size: 15px;
+}
+ion-icon:hover{
+    border-radius: 50%;
+    background-color: rgba($color: #f59758, $alpha: 0.3);
+    padding: 5px;
+}

@@ -1,0 +1,38 @@
+<app-header></app-header>
+<ion-content [fullscreen]="true">
+    <app-bread-crumb [breadCrumbs]="breadCrumbs"></app-bread-crumb>
+  <div class="cart-box">
+    <h4 class="title-cart mycart">My Cart</h4>
+  </div>
+  <div class="cart-section">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" [sizeSm]="12" [sizeMd]="8" class="ion-no-padding ion-no-margin">
+          <ion-card class="ion-no-padding">
+            <h3 class="text-color-black text-bold substitution">Substitution Preferences</h3>
+            <p class="text-color-black para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ab?</p>
+            <ion-button fill="clear" class="btn-a1">Don't Replace Anything</ion-button>
+            <ion-button fill="clear" class="btn-a1-2 btn-a1">Replace All Unavailable</ion-button>
+          </ion-card>
+          <ion-card class="ion-no-padding">
+            <div class="text-color-black">
+              <div class="box-s">
+                <h3 class="text-bold payment-title">Groceries Basket <span class="opacity">(2)</span></h3>
+                <p class="text-bold">${{ total }}</p>
+              </div>
+              <app-cart-product [items]="items"></app-cart-product>
+            </div>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" [sizeSm]="12" [sizeMd]="4" class="fixed-1 ion-no-padding ion-no-margin">
+          <app-payment-order-summary [total]="total" [button]="button" [title]="title" ></app-payment-order-summary>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div>
+      <h3 class="text-color-black text-bold">Top Deals</h3>
+      <app-product-slider [item]="topDeals"></app-product-slider>
+    </div>
+  </div>
+</ion-content>
+<app-address contentId="checkout-content"></app-address>

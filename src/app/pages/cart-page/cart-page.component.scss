@@ -1,0 +1,125 @@
+.cart-box {
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.title-cart {
+    color: black;
+    margin-left: 15px;
+    font-family: sans-serif;
+    font-weight: bolder;
+    font-size: 32px;
+}
+
+.item-bx {
+    margin-top: 15px;
+}
+.cart-section {
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+ion-card {
+    padding: 10px;
+    border-radius: 25px;
+    box-shadow: none;
+    border: 1px solid rgb(219, 215, 215);
+}
+
+.btn-a1 {
+    border: 1px solid rgb(170, 168, 168);
+    border-radius: 10px;
+    color: black;
+    text-transform: capitalize;
+}
+
+.btn-a1-2 {
+    background-color: #ff5c01;
+    color: white;
+}
+
+.payment-title {
+    font-size: 13px;
+}
+
+.box-s {
+    display: flex;
+    justify-content: space-between;
+}
+
+.opacity {
+    opacity: 0.7;
+}
+
+
+.cart-btn-box {
+    margin-top: 60px;
+}
+
+.cart-a1 {
+    width: 60%;
+}
+
+.text-02 {
+    font-size: 14px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.hr-line {
+    width: 95%;
+    border: 1px solid black;
+    opacity: 0.1;
+    margin: auto;
+}
+
+.checkout-btn {
+    width: 100%;
+    background-color: #ff5c01;
+    color: white;
+    border-radius: 25px;
+}
+.fixed-1{
+    position: fixed; 
+    right: 40px; 
+    z-index: 1000;
+}
+@media (max-width: 1024px) {
+    .text-02 {
+        margin: 20px 0px;
+        font-size: 14px;
+    }
+    .fixed-1{
+        position: static;
+    }
+}
+
+@media (max-width:767px) {
+    .cart-box {
+        width: 100%;
+        margin-top: 30px;
+    }
+    .cart-section {
+        width:100%;
+        margin-top: 30px;
+    }
+    .substitution{
+        font-size: 15px;
+    }
+    .mycart{
+        font-size: 18px;
+    }
+    .para{
+        font-size: 13px;
+    }
+    .btn-a1{
+        width: fit-content;
+        font-size: 12px;
+    }
+}

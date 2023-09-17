@@ -1,0 +1,54 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <app-bread-crumb [breadCrumbs]="breadCrumbs"></app-bread-crumb>
+  <div class="cart-box">
+    <h4 class="title-cart mycart">MHG Rewards</h4>
+  </div>
+  <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col [sizeMd]="5" [sizeSm]="12" [sizeXs]="12">
+          <h3 class="text-color-black text-bold opacity text-center">Code</h3>
+          <h3 class="text-color-black text-bold text-center">GC85411440</h3>
+        </ion-col>
+        <ion-col [sizeMd]="2" [sizeSm]="12" [sizeXs]="12">
+          <div class="hr-line"></div>
+        </ion-col>
+        <ion-col [sizeMd]="5" [sizeSm]="12" [sizeSx]="12">
+          <h3 class="text-color-black text-bold opacity text-center">Available balance</h3>
+          <h3 class="text-color-black text-bold text-center">$0.00</h3>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  <div class="cart-box">
+    <h4 class="title-cart mycart">Usage History</h4>
+  </div>
+  <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="text-c">
+          Order Id
+        </ion-col>
+        <ion-col class="text-c">
+          Amount
+        </ion-col>
+        <ion-col class="text-c">
+          Date Added
+        </ion-col>
+      </ion-row>
+      <ion-Row *ngFor="let item of usageHistory;">
+        <ion-col class="text-r">
+          {{item?.order}}
+        </ion-col>
+        <ion-col class="text-r">
+          {{item?.amount}}
+        </ion-col>
+        <ion-col class="text-r">
+          {{item?.date}}
+        </ion-col>
+      </ion-Row>
+    </ion-grid>
+  </ion-card>
+</ion-content>

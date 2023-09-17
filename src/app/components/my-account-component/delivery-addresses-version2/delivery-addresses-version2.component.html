@@ -1,0 +1,53 @@
+<ion-list>
+  <ion-item>
+    <ion-label>
+      <p class="text-bold">My Addresses</p>
+      <button id="open-ionic-modal-add-2" expand="block" class="add-section">+ Add New Address</button>
+    </ion-label>
+  </ion-item>
+
+  <div *ngFor="let object of deliveyAddressObjects; let i=index;">
+    <ion-item>
+      <div class="div-container">
+        <div class="div-1">
+          <div class="text-bold-2 div-left">{{object.addressType}}</div>
+          <div class="dropdown">
+            <button class="dropbtn div-right" id="click-trigger" fill="clear">
+              <ion-icon name="ellipsis-vertical"></ion-icon>
+            </button>
+            <div class="dropdown-content">
+              <a id="open-ionic-modal-edit-2" expand="block" (click)="editAddress(object)"><ion-icon
+                  name="eyedrop"></ion-icon>Edit</a>
+              <a (click)="deleteAddress(i)"><ion-icon name="trash"></ion-icon>Delete</a>
+            </div>
+          </div>
+        </div>
+        <div class="div-2">
+          {{object.gateCode}}, {{object.suite}}, {{object.aptName}}, {{object.zipCode}}, {{object.address}}.
+        </div>
+      </div>
+    </ion-item>
+  </div>
+
+</ion-list>
+
+<!-- <ion-button class="dropdownbtn" id="click-trigger" fill="clear">More</ion-button> -->
+
+
+<!-- <div> -->
+<!-- <button class="dropbtn div-right" id="click-trigger" fill="clear">
+              <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+            </button> -->
+<!-- <ion-popover trigger="click-trigger" triggerAction="click">
+              <ng-template>
+                <ion-text class="popover" id="open-ionic-modal-edit-2" expand="block" (click)="editAddress(object)">
+                  <ion-icon name="eyedrop"></ion-icon>
+                  Edit
+                </ion-text>
+                <ion-text class="popover" (click)="deleteAddress(i)">
+                  <ion-icon name="trash"></ion-icon>
+                  Delete
+                </ion-text>
+              </ng-template>
+            </ion-popover> -->
+<!-- </div> -->

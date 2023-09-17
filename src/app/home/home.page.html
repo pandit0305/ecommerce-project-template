@@ -1,0 +1,21 @@
+<app-header></app-header>
+<ion-content [fullscreen]="true">
+  <app-banner></app-banner>
+  <app-categories></app-categories>
+  <div id="container">
+    <div *ngFor="let item of items; let i=index;">
+      <div class="title-bx">
+        <span class="text-color-black cate-title">{{item?.title}}</span>
+        <ion-button fill="clear" class="see-all" (click)="seeAllButton(item)">See All</ion-button>
+      </div>
+      <div>
+        <app-product-slider [items]="item?.products"></app-product-slider>
+      </div>
+      <app-product-card [items]="searchItems"></app-product-card>
+    </div>
+    <app-product-card [items]="searchItems"></app-product-card>
+  </div>
+  <app-offers-zone></app-offers-zone>
+  <app-footer></app-footer>
+</ion-content>
+<app-cart-popover></app-cart-popover>

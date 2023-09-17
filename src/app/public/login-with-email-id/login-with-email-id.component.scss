@@ -1,0 +1,130 @@
+ion-modal#login-1 {
+    --width: fit-content;
+    --min-width: 300px;
+    --height: fit-content;
+    --border-radius: 25px;
+    --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+}
+
+ion-modal .wrapper {
+    height: fit-content;
+}
+
+ion-button[color="dark"] {
+    text-transform: capitalize;
+}
+
+.header6 {
+    text-transform: capitalize;
+}
+
+ion-card-title {
+    font-weight: 600;
+}
+
+ion-card {
+    border: none;
+    box-shadow: none;
+    width: fit-content;
+    border-radius: 30px;
+    height: auto;
+}
+
+.text-0x {
+    text-align: center;
+    color: rgb(114, 112, 112);
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.signup {
+    color: #ff5c01;
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.loader {
+    margin-right: 2px;
+    border: 2px solid #ff5c01;
+    border-radius: 50%;
+    border-top: 2px solid #080808;
+    width: 15px;
+    height: 15px;
+    animation: spinner 2s linear infinite;
+}
+
+.opacity {
+    opacity: 0.5;
+}
+
+.text-color-green {
+    color: green;
+}
+.otp{
+    color: black;
+}
+.cursor{
+    cursor: pointer;
+}
+.text-h {
+    font-weight: bold;
+    font-size: 12px;
+    color: #ff5c01;
+    text-transform: capitalize;
+    text-decoration: underline;
+}
+.text-fields{
+    font-size: 14px;
+    margin: 0px 20px;
+    padding: 20px 10px;
+    background-color: white;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgb(209, 203, 203);
+}
+.text-fields:focus{
+    outline: none;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+.border-c{
+    border-bottom: 1px solid red;
+}
+.fs {
+    font-size: 10px;
+    margin-left: 10px;
+}
+.back-btn{
+    font-size: 24px;
+    color: black;
+    cursor: pointer;
+}
+ion-spinner {
+    --color: #ff5c01;
+    width: 20px;
+    height: 20px;
+    opacity: 0.9;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: -webkit-translate(-50%, -50%);
+    transform: -moz-translate(-50%, -50%);
+    transform: -ms-translate(-50%, -50%);
+  }
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

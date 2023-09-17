@@ -1,0 +1,113 @@
+<app-header></app-header>
+<ion-content [fullscreen]="true">
+  <app-bread-crumb [breadCrumbs]="breadCrumbs"></app-bread-crumb>
+  <ion-grid class="ion-grid">
+    <ion-row>
+      <ion-col [sizeMd]="2" [sizeSm]="12" [sizeXs]="12">
+        <ion-grid>
+          <ion-row>
+            <ion-col [sizeMd]="12">
+              <img [src]="item?.image" alt="" class="small-image">
+            </ion-col>
+            <ion-col [sizeMd]="12">
+              <img [src]="item?.image" alt="" class="small-image">
+            </ion-col>
+            <ion-col [sizeMd]="12">
+              <img [src]="item?.image" alt="" class="small-image">
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+      <ion-col [sizeMd]="4" [sizeSm]="12" [sizeXs]="12">
+        <div class="image-box">
+          <img [src]="item?.image" alt="product_image" class="large-image" id="img-z"
+            (mousemove)="onMouseMove($event, item)" 
+            (mouseout)="onMouseOut()"
+            >
+          <div class="magnify-img">
+          </div>
+        </div>
+        <div (click)="addToCart()">
+          <button class="checkout-btn" fill="clear" *ngIf="!isAdd">Add to Cart</button>
+        </div>
+        <div class="addtocart">
+          <app-cart-button *ngIf="isAdd" [item]="item" [btnSize]="isAdd"></app-cart-button>
+        </div>
+      </ion-col>
+      <ion-col [sizeMd]="6" [sizeSm]="12" [sizeXs]="12">
+        <div class="details-1">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="12">
+                <ion-title class="text-color-black item-title">{{ item?.title}} - {{ item.weight }}</ion-title>
+              </ion-col>
+              <ion-col size="12">
+                <div class="price-icon-bx">
+                  <ion-title class="text-color-black item-price">${{ item?.price * item?.quantity }}</ion-title>
+                  <ion-icon name="heart-outline" class="heart-icon"></ion-icon>
+                </div>
+              </ion-col>
+              <ion-col size="12">
+                <ion-button fill="clear" class="stock-btn">In stock</ion-button>
+              </ion-col>
+              <ion-col size="12">
+                <p class="text-color-black text-x1">{{ item?.Expiry_Date }}</p>
+              </ion-col>
+              <div class="hr-line"></div>
+              <ion-col size="12">
+                <ion-title class="text-color-black item-desc">Product Description</ion-title>
+              </ion-col>
+              <ion-col size="12">
+                <p class="text-color-black text-x1 text-x2">{{ item?.Description }}</p>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="hr-line"></div>
+  <div class="box-xl">
+    <ion-title class="text-color-black item-desc margin-1">Similar Products</ion-title>
+    <app-product-card [items]="items"></app-product-card>
+    <ion-title class="text-color-black item-desc margin-1">Frequently Brought Together</ion-title>
+    <app-product-slider [item]="topDeals"></app-product-slider>
+    <div class="hr-line"></div>
+    <ion-title class="text-color-black item-desc margin-1">Ratings & Reviews</ion-title>
+    <ion-grid>
+      <ion-row>
+        <ion-col [sizeXs]="12" [sizeSm]="12" [sizeMd]="3">
+          <ion-title class="text-color-black item-desc margin-1">0</ion-title>
+          <ion-title>
+            <ion-icon name="star" class="star"></ion-icon>
+            <ion-icon name="star" class="star"></ion-icon>
+            <ion-icon name="star" class="star"></ion-icon>
+            <ion-icon name="star" class="star"></ion-icon>
+          </ion-title>
+          <ion-title class="text-color-black rating-font">0 ratings</ion-title>
+        </ion-col>
+        <ion-col [sizeXs]="12" [sizeSm]="12" [sizeMd]="5">
+          <ion-grid>
+            <ion-row *ngFor="let rating of ratings;">
+              <ion-col size="0.5" class="text-color-black opacity rating-tex">{{rating?.rating}}</ion-col>
+              <ion-col size="1">
+                <ion-icon [name]="rating.star" class="star"></ion-icon>
+              </ion-col>
+              <ion-col size="4">
+                <p class="hr-line2"></p>
+              </ion-col>
+              <ion-col size="2" class="text-color-black opacity rating-tex">{{rating?.percent}}</ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-title class="text-color-black item-desc margin-1">Review this product</ion-title>
+    <ion-title class="text-color-black rating-font">Help others make an informed decision!</ion-title>
+    <ion-title class="review-text">Write a Review</ion-title>
+    <ion-item lines="none" class="body-text">
+      <ion-textarea class="text-color-black" placeholder="write a review"
+        (change)="onChangeReview($event)"></ion-textarea>
+    </ion-item>
+  </div>
+</ion-content>

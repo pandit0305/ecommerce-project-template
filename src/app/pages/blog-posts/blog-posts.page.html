@@ -1,0 +1,19 @@
+<app-header></app-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <app-bread-crumb [breadCrumbs]="breadCrumbs"></app-bread-crumb>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let object of blogPost" [sizeMd]="4" [sizeSm]="6" [sizeXs]="12">
+        <ion-card (click)="moveToBlogPage(object)">
+          <img [src]="object.blogImage" alt="blogImage">
+          <ion-card-content>
+            <ion-button fill="clear">{{object.categoryName}}</ion-button>
+            <ion-text class="text-date">{{object.date}}</ion-text>
+            <p class="text-color">{{object.blogDescription}}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <app-footer></app-footer>
+</ion-content>

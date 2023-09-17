@@ -1,0 +1,146 @@
+.text-bold {
+    font-weight: bolder;
+}
+
+.text-font {
+    font-size: 14px;
+}
+
+ion-card {
+    padding: 20px 20px 40px 20px;
+    border-radius: 25px;
+    box-shadow: none;
+    border: 1px solid rgb(219, 215, 215);
+}
+
+.btn-a1 {
+    width: 230px;
+    height: 40px;
+    border: 1px solid rgb(170, 168, 168);
+    border-radius: 10px;
+    color: black;
+    text-transform: capitalize;
+}
+
+.btn-a1-2 {
+    background-color: #ff5c01;
+    color: white;
+}
+
+.payment-title {
+    font-size: 13px;
+}
+
+.box-s {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.opacity {
+    opacity: 0.7;
+}
+
+ion-icon {
+    font-size: 24px;
+    opacity: 0.8;
+}
+
+.cart-btn-box {
+    margin-top: 60px;
+}
+
+.cart-a1 {
+    width: 60%;
+}
+
+.text-2 {
+    font-size: 16px;
+}
+
+.count-txt {
+    font-size: 22px;
+}
+
+.hr-line {
+    width: 95%;
+    border: 1px solid black;
+    opacity: 0.1;
+    margin: auto;
+}
+
+.delivery-1 {
+    opacity: 0.7;
+    font-size: 16px;
+}
+
+.chk-1 {
+    width: 50%;
+    margin: auto;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 15px 15px;
+    background-color: #ff5c01;
+    color: white;
+    padding: 15px;
+    border-radius: 25px;
+    margin: 15px 0px 15px 15px;
+    font-size: 22px;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+.checkout-btn:hover {
+    opacity: 0.8;
+    background-color: #f5cab1;
+    color: #ff5c01;
+}
+
+.address-text {
+    font-size: 20px;
+    border-bottom: 1px solid rgb(170, 168, 168);
+}
+
+
+.pay01 {
+    color: black;
+    margin-left: 10px;
+    font-size: 20px;
+    opacity: 0.7;
+    font-weight: bold;
+}
+
+.radio-1 {
+    width: 8%;
+    height: 2em;
+}
+
+input[type='radio'] {
+    accent-color: #ff5c01;
+}
+
+.cart-btn-box1 {
+    margin-top: 40px;
+}
+@media (max-width:767px){
+    .checkout-btn {
+        width: 100%;
+        padding: 10px 10px;
+        background-color: #ff5c01;
+        color: white;
+        border-radius: 25px;
+        margin: 10px 0px 10px 10px;
+        font-size: 13px;
+        font-weight: bold;
+        transition: 0.4s ease-in-out;
+        line-height: 20px;
+    }
+    
+    .checkout-btn:hover {
+        opacity: 0.8;
+        background-color: #f5cab1;
+        color: #ff5c01;
+    }
+}

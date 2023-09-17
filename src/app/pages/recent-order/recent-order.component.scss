@@ -1,0 +1,206 @@
+.ion-grid {
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+ion-card {
+    width: 90%;
+    margin: auto;
+}
+
+ion-icon {
+    cursor: pointer;
+}
+
+.form {
+    height: 50px;
+}
+
+.input {
+    color: black;
+    font-size: 18px;
+    background-color: rgb(236, 234, 234);
+    width: 100%;
+    border: none;
+    color-scheme: dark;
+}
+.input:focus{
+    outline: none;
+}
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+.cal-1 {
+    color: grey;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.checkout-btn {
+    width: fit-content;
+    background-color: #ff5c01;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.4s;
+}
+
+.checkout-btn:hover {
+    background-color: #f5cab1;
+    color: #ff5c01;
+}
+
+.search {
+    float: right;
+    margin-top: 20px;
+}
+
+.ion-padding>h3 {
+    width: 90%;
+    margin: auto;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.text-c {
+    font-size: 23px;
+    color: black;
+    font-weight: bold;
+    padding: 30px;
+}
+
+.text-r {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 30px;
+}
+
+img {
+    width: 50px;
+    height: 60px;
+}
+
+h4 {
+    font-weight: bolder;
+}
+
+.ion-title {
+    color: black;
+    font-weight: bold;
+    opacity: 0.7;
+}
+
+.no-order {
+    width: 80%;
+    border-bottom: 1px solid rgb(167, 164, 164);
+}
+
+.date-01 {
+    margin-top: 20px;
+    width: 80%;
+    border-bottom: 1px solid rgb(167, 164, 164);
+}
+
+.chat {
+    color: #ff5c01;
+}
+
+.outOfStock {
+    padding: 5px;
+    font-size: 12px;
+    color: red;
+}
+
+.addtcart {
+    width: fit-content;
+    color: green;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.loader {
+    margin-right: 5px;
+    border: 4px solid rgb(201, 200, 200);
+    border-radius: 50%;
+    border-top: 4px solid #ff5c01;
+    width: 25px;
+    height: 25px;
+    animation: spinner 2s linear infinite;
+}
+
+.opacity {
+    opacity: 0.5;
+}
+
+.text-sx{
+    width: 90%;
+    margin: auto;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width:768px) {
+    ion-grid {
+        width: 100%;
+        margin: auto;
+        margin-top: 10px;
+    }
+
+    ion-card {
+        width: 100%;
+        margin: auto;
+        margin-top: 30px;
+    }
+
+    .text-c {
+        font-size: 14px;
+        color: black;
+        font-weight: bold;
+        padding: 5px;
+    }
+
+    .text-r {
+        text-align: center;
+        font-weight: bold;
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .ion-title {
+        color: black;
+        font-weight: bold;
+        opacity: 0.7;
+        font-size: 15px;
+    }
+
+    h4 {
+        font-weight: bolder;
+        font-size: 15px;
+    }
+    .addtcart {
+        width: fit-content;
+        color: green;
+        font-weight: bold;
+        font-size: 13px;
+        text-wrap:wrap;
+    }
+    .text-sx{
+        width: 100%;
+        font-size: 18px;
+        font-weight: bold;
+    }
+}

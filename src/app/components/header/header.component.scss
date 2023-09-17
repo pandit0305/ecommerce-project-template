@@ -1,0 +1,160 @@
+// header css
+ion-grid{
+  width: 100%;
+  margin: auto;
+}
+ion-row {
+  margin-top: 8px;
+}
+
+.logo {
+  width: 60px;
+  height: 35px;
+  margin-top: -5px;
+  cursor: pointer;
+}
+
+ion-searchbar#search-bar {
+  --background: rgb(231, 225, 225);
+  --placeholder-color: rgb(119, 117, 117);
+  --clear-button-color: rgb(100, 98, 98);
+  --color: black;
+  --box-shadow: none;
+  --border-radius: 30px;
+  margin-top: -5px;
+}
+
+ion-icon {
+  color: black;
+  cursor: pointer;
+}
+.location {
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.check-delivery {
+  color: black;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  text-decoration: underline;
+}
+
+.icon {
+  margin-top: 5px;
+}
+.login {
+  margin-left: 5px;
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.cartItem {
+  margin-top: -10px;
+  /* border: 1px solid red; */
+  background-color: #ff5c01;
+  color: white;
+  border-radius: 50%;
+  width: fit-content;
+  height: fit-content;
+  font-size: 13px;
+  padding: 2px;
+
+}
+
+.cart {
+
+  display: flex;
+
+  margin-top: 5px;
+
+  justify-content: center;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+ion-header {
+  box-shadow: none;
+
+}
+
+ion-toolbar{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+// header css
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+// content
+
+.dropdown-content {
+  display: block;
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 300px;
+  overflow: auto;
+  color: black;
+  left: 60%;
+  z-index: 1000;
+  top: 60px;
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.search-list {
+  min-width: 300px;
+  height: 300px;
+  overflow-y: hidden;
+  color: black;
+  border: 1px solid #ddd;
+  left: 50%;
+  z-index: 1000;
+}
+
+.ion-item {
+  cursor: pointer;
+}
+
+.ion-item:hover {
+  border-bottom: 1px solid #ff5c01;
+}
+.ion-item>ion-label:hover {
+  color: #ff5c01;
+
+}
+
+.search-item {
+  color: black;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+@media all and (max-width:768px) {
+  ion-grid{
+    width: 100%;
+  }
+  .dropdown-content {
+    display: block;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 300px;
+    overflow: auto;
+    color: black;
+    left: 5%;
+    z-index: 1000;
+    top: 120px;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+}

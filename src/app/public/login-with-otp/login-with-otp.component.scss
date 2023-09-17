@@ -1,0 +1,100 @@
+ion-modal#login-1 {
+    --width: fit-content;
+    --min-width: 300px;
+    --height: fit-content;
+    --border-radius: 25px;
+    --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+}
+
+ion-modal .wrapper {
+    height: fit-content;
+}
+
+ion-button[color="dark"] {
+    text-transform: capitalize;
+}
+
+.header6 {
+    text-transform: capitalize;
+}
+
+ion-card-title {
+    font-weight: 600;
+}
+
+ion-card {
+    border: none;
+    box-shadow: none;
+    width: fit-content;
+    border-radius: 30px;
+    height: auto;
+}
+
+.text-0x {
+    text-align: center;
+    color: rgb(114, 112, 112);
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.signup {
+    color: #ff5c01;
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.loader {
+    margin-right: 2px;
+    border: 2px solid #ff5c01;
+    border-radius: 50%;
+    border-top: 2px solid #080808;
+    width: 15px;
+    height: 15px;
+    animation: spinner 2s linear infinite;
+}
+
+.opacity {
+    opacity: 0.5;
+}
+
+ngx-otp-input {
+    .ngx-otp-input-box {
+        border: 1px solid red;
+    }
+}
+
+.text-color-green {
+    color: green;
+}
+.otp{
+    color: black;
+}
+.text-h {
+    font-weight: bold;
+    font-size: 12px;
+    color: #ff5c01;
+    text-transform: capitalize;
+}
+.resend{
+    color: blue;
+    text-decoration: underline;
+    width: 95%;
+    display: flex;
+    justify-content: end;
+    cursor: pointer;
+}
+ion-spinner {
+    --color: #ff5c01;
+    width: 20px;
+    height: 20px;
+    opacity: 0.9;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: -webkit-translate(-50%, -50%);
+    transform: -moz-translate(-50%, -50%);
+    transform: -ms-translate(-50%, -50%);
+  }

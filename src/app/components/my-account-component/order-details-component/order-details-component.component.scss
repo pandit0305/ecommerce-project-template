@@ -1,0 +1,43 @@
+div {
+    border: 1px solid rgba($color: #000000, $alpha: 0.2);
+    border-radius: 20px;
+}
+
+
+h5{
+    font-weight: bold;
+}
+h2{
+    font-size: x-large;
+    font-weight: bold;
+}
+
+
+.hr-line {
+    // width: 90%;
+    // margin: 0 auto;
+    width: 95%;
+    border: 1px solid black;
+    opacity: 0.1;
+    margin: auto;
+}
+
+.arrow-icon {
+    border: 1px solid rgba($color: #000000, $alpha: 0.2);
+    border-radius: 5px;
+    padding: 5px;
+
+}
+
+.arrow-icon:hover {
+    background-color: rgb(240, 115,40);
+    cursor: pointer;
+}
+
+.yesActive {
+    color: green;
+}
+
+.notActive {
+    color: red;
+}

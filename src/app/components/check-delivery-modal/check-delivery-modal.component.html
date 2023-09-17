@@ -1,0 +1,52 @@
+<div id="modal-2">
+  <!-- <ng-template> -->
+  <div class="wrapper">
+    <h1 class="text-color-black text-1">See if we deliver in your area!</h1>
+    <div class="box-02">
+      <div>
+        <input [(ngModel)]="zipCode" type="text" placeholder="Enter Zip Code" class="input-01 border-r text-color-black"
+          maxlength="6" />
+        <p class="p0" *ngIf="isError">Enter Post Code</p>
+      </div>
+      <div>
+        <ion-button fill="clear" class="check-btn border-r bg-color" (click)="checkDeliveryStatus()"
+          *ngIf="!isLoading">Check</ion-button>
+      </div>
+    </div>
+    <div class="box-03">
+      <div *ngIf="isLoading">
+        <ion-button fill="clear" class="check-btn border-r">Checking...</ion-button>
+      </div>
+      <div *ngIf="isMessage">
+        <p class="p1">
+          {{ isMessage }}
+        </p>
+      </div>
+    </div>
+    <div *ngIf="!isMessage && !isError && !isLoading && isZipCode">
+      <div class="box-01">
+        <div *ngFor="let time of productDeliveryTime;let i = index;">
+          <div class="box-1">
+            <p class="text-color-black txt-01 txt-1">{{ time?.lable}}</p>
+            <p class="text-color-black txt-01">{{ time?.value }}</p>
+          </div>
+          <div class="hr-line" *ngIf="i==0"></div>
+        </div>
+      </div>
+      <br />
+      <div class="box-01">
+        <div>
+          <ion-title class="text-color-black head-1">{{ shoppingRatesInfo?.heading }}</ion-title>
+        </div>
+        <div *ngFor="let info of shoppingRatesInfo?.shoppingRates;let i = index;">
+          <div class="box-1">
+            <p class="text-color-black txt-01 txt-1">{{ info?.lable }}</p>
+            <p class="text-color-black txt-01">${{ info?.value }}</p>
+          </div>
+          <div class="hr-line" *ngIf="i<2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- </ng-template> -->
+</div>

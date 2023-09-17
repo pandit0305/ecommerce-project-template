@@ -1,0 +1,47 @@
+<div class="item-bx" *ngFor="let item of items;let i = index">
+  <ion-grid>
+    <ion-row *ngIf="cart">
+      <ion-col [sizeMd]="2" [sizeSm]="3" [sizeXs]="3">
+        <img [src]="item?.image" alt="cart_image" class="small-image">
+      </ion-col>
+      <ion-col [sizeMd]="8" [sizeSm]="6" [sizeXs]="6">
+        <h6 class="text-bold opacity">{{ item?.title }}</h6>
+        <p class="text-bold">${{ item?.price * item?.quantity }}</p>
+      </ion-col>
+      <ion-col [sizeMd]="2" [sizeSm]="3" [sizeXs]="3" class="box-s">
+        <ion-icon name="heart-outline" class="cursor" (click)="addOnWishList(item)"></ion-icon>
+        <ion-icon name="trash-outline" class="cursor" (click)="deleteItem(item?.id)"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="cart">
+      <ion-col [sizeMd]="2" [sizeSm]="0" [sizeXs]="0"></ion-col>
+      <ion-col [sizeMd]="8" [sizeSm]="10" [sizeSx]="10">
+        <div class="yesNo-box">
+          <div class="toggle-btn">
+            <div class="yes">Yes</div>
+            <div class="no">No</div>
+          </div>
+          <div class="text-02 opacity">
+            Replace if unavailable
+          </div>
+        </div>
+      </ion-col>
+      <ion-col [sizeMd]="2" [sizeSm]="2" [sizeSx]="2">
+        <app-cart-button [item]="item"></app-cart-button>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="checkout">
+      <ion-col [sizeMd]="2" [sizeSm]="12" [sizeXs]="12">
+        <img [src]="item?.image" alt="" class="small-image">
+      </ion-col>
+      <ion-col [sizeMd]="8" [sizeSm]="6" [sizeXs]="6">
+        <h6 class="text-bold text-color-black opacity count-txt">{{ item?.title }}</h6>
+        <p class="text-bold text-color-black count-txt">${{ item?.price }}</p>
+      </ion-col>
+      <ion-col [sizeMd]="2" [sizeSm]="6" [sizeXs]="6" class="text-center text-color-black count-txt">
+        1
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="hr-line" *ngIf="i < items.length-1"></div>
+</div>

@@ -1,0 +1,20 @@
+<app-header></app-header>
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="2" class="fixed-1">
+        <div >
+          <app-shop-by-category></app-shop-by-category>
+        </div>
+      </ion-col>
+      <ion-col  class="product-bx" six="10">
+        <ion-item lines="none" class="fixed-cate-title">
+          <ion-title class="text-color-black cate-title">Top Deals</ion-title>
+        </ion-item>
+        <div class="x-top">
+          <app-product-card [items]="items"></app-product-card>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

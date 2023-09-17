@@ -1,0 +1,36 @@
+<ion-modal id="modal-3" #model trigger="open-ionic-model-3">
+  <ng-template>
+    <div class="form-container">
+      <div class="title-section">
+        Enter Complete Address <ion-icon name="close-circle-outline" (click)="makeInVisible()"></ion-icon>
+      </div>
+
+      <form [formGroup]="addAddressForm">
+
+        <ion-input name="name" formControlName="name" label="Receiver's Name" label-placement="floating" fill="outline"
+          placeholder="Enter Receiver's Name" class="border-section input-size"></ion-input>
+
+        <ion-input name="gateCode" formControlName="gateCode" label="Gate Code" label-placement="floating"
+          fill="outline" placeholder="Gate Code" class="border-section input-size"></ion-input>
+
+        <ion-input name="zipCode" formControlName="zipCode" label="Zip Code" label-placement="floating" fill="outline"
+          placeholder="Zip Code" class="border-section input-size"></ion-input>
+
+        <ion-input name="suite" formControlName="suite" label="Suite / Apt#" label-placement="floating" fill="outline"
+          placeholder="Suite / Apt#" class="border-section input-size"></ion-input>
+
+        <ion-input name="aptName" formControlName="aptName" label="Name of Appartment" label-placement="floating"
+          fill="outline" placeholder="Name of Appartment" class="border-section input-size"></ion-input>
+
+        <ion-input name="address" formControlName="address" label="city,state,country" label-placement="floating"
+          fill="outline" placeholder="city,state,country" class="border-section input-size"></ion-input>
+
+        <div class="btn-container">
+          <button *ngFor="let btn of saveButtons;" class="btn-color"  (click)="setType(btn)" [ngClass]="{'isClicked':btn?.isSelect && id == btn?.id}"
+            class="border-section button-padding">{{ btn?.title }}</button>
+        </div>
+        <button class="border-section full-width" (click)="onSaveAddress()">Save Address</button>
+      </form>
+    </div>
+  </ng-template>
+</ion-modal>

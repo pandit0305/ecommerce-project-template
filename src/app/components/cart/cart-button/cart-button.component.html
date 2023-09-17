@@ -1,0 +1,19 @@
+
+
+<ion-grid >
+  <ion-row >
+    <ion-col size="4">
+      <button  class="icon-btn " [disabled]="item?.quantity == 0" (click)="decreaseItem(item)" >
+        <div> <ion-icon name="remove-outline"></ion-icon></div>
+      </button>
+    </ion-col>
+    <ion-col size="4" class="cart-btn" style="font-size: 10px;" style="padding-left: 7px;" >
+      {{ item?.quantity }}
+    </ion-col>
+    <ion-col size="4">
+      <button class=" icon-btn "[disabled]="item?.quantity == 10" (click)="increaseItem(item)">
+        <div style="font-weight: bold;"><ion-icon  name="add-sharp"></ion-icon></div>
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-grid>

@@ -1,0 +1,293 @@
+#box{
+  width: 90%;
+  margin: auto;
+}
+.grid-box {
+  display: grid;
+  row-gap: 5px;
+  width: 100%;
+  height: auto;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+ion-card {
+  padding: 5px;
+  border-radius: 25px;
+  margin: 3px;
+  box-shadow: none;
+  border: 1px solid rgb(192, 191, 191);
+  max-width: 300px;
+  // height: auto;
+  min-height: fit-content;
+  position: relative;
+}
+
+.img-01 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ion-card-title {
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+ion-card img {
+  width: 160px;
+  height: 160px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+// ion-card img:hover {
+//   border: 1px solid rgb(163, 162, 162);
+// }
+
+
+.title {
+  margin-top: 40px;
+  color: black;
+  margin-left: 5px;
+  font-family: sans-serif;
+  font-weight: 800;
+  font-size: 25px;
+  padding-bottom: 15px;
+}
+
+.heart {
+  position: absolute;
+  right: 10px;
+  color: #ff5c01;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.heart:hover {
+  opacity: 0.7;
+}
+
+.heart-outline {
+  position: absolute;
+  right: 10px;
+  color: #6e6e6e;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.heart-outline:hover {
+  opacity: 0.7;
+  color: #ff5c01;
+}
+
+#price-btn {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#price-btn ion-row {
+  width: 100%;
+}
+
+.price-cd {
+  font-size: 18px;
+  font-weight: bolder;
+  font-family: sans-serif;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.add-btn {
+  display: flex;
+  justify-content: end;
+}
+
+ion-button {
+  border: 1px solid #ff5c01;
+  border-radius: 5px;
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+ion-skeleton-text {
+  --border-radius: 25px;
+  background-color: rgb(221, 216, 216);
+}
+
+.icon-sk {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 10px;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.img-sk {
+  width: 160px;
+  height: 160px;
+}
+
+.btn-sk {
+  width: 40px;
+  height: 30px;
+}
+
+@media (max-width:1024px) {
+  .grid-box {
+    display: grid;
+    row-gap: 5px;
+    width: 100%;
+    height: auto;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width:768px) {
+  .grid-box {
+    display: grid;
+    row-gap: 5px;
+    width: 100%;
+    height: auto;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  ion-card {
+    padding: 5px;
+    border-radius: 25px;
+    box-shadow: none;
+    border: 1px solid rgb(192, 191, 191);
+    max-width: 300px;
+    height: fit-content;
+    min-height: fit-content;
+  }
+
+  ion-button {
+    border: 1px solid orange;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .price-cd {
+    font-size: 14px;
+    font-weight: bolder;
+    font-family: sans-serif;
+  }
+}
+
+@media (max-width:540px) {
+  .grid-box {
+    display: grid;
+    row-gap: 5px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  ion-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+
+  .img-sk {
+    width: 80px;
+    height: 80px;
+  }
+
+  ion-card-title {
+    font-size: 15px;
+    font-weight: bold;
+    font-family: sans-serif;
+  }
+
+  #price-btn {
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .price-cd {
+    font-size: 12px;
+    font-weight: bolder;
+    font-family: sans-serif;
+    margin-top: 5px;
+  }
+
+  ion-button {
+    width: 30px;
+    height: 19.5px;
+    font-size: 8px;
+  }
+
+}
+
+@media (max-width:325px) {
+  .grid-box {
+    display: grid;
+    row-gap: 5px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  ion-button {
+    width: 30px;
+    height: 19.5px;
+    font-size: 8px;
+
+  }
+
+  .price-cd {
+    font-size: 12px;
+    font-weight: bolder;
+    font-family: sans-serif;
+    margin-top: 5px;
+  }
+
+  ion-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+
+  .img-sk {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width:280px) {
+  .grid-box {
+    display: grid;
+    row-gap: 5px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .price-cd {
+    font-size: 12px;
+    font-weight: bolder;
+    font-family: sans-serif;
+    margin-top: 5px;
+
+  }
+
+  ion-button {
+    width: 30px;
+    height: 19.5px;
+    font-size: 8px;
+  }
+
+  ion-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+
+  .img-sk {
+    width: 50px;
+    height: 50px;
+  }
+}

@@ -1,0 +1,24 @@
+<app-header></app-header>
+<ion-content class="ion-padding">
+  <ion-card>
+    <img [src]="posts.blogImage2" alt="blog_image">
+  </ion-card>
+  <ion-card>
+    <ion-item lines="none">
+      <ion-button fill="clear" (click)="gotoGrocery()">Grocery</ion-button>
+      <ion-label class="date">{{ posts.date }}</ion-label>
+    </ion-item>
+    <ion-card class="blog-content">
+      <ion-card-header>
+        {{ posts.title }}
+      </ion-card-header>
+      <ion-card-content>
+        {{ posts.content }}
+        <br/>
+        <br/>
+        {{ posts.content }}
+      </ion-card-content>
+    </ion-card>
+  </ion-card>
+  <app-footer></app-footer>
+</ion-content>

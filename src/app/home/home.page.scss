@@ -1,0 +1,82 @@
+#container {
+  width: 94%;
+  margin: 40px auto;
+}
+
+.title-bx {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.titletext {
+  padding-left: 35px;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 20px;
+}
+
+ion-popover#searchbar-1 {
+  --color: white;
+  --border-radius: 25px;
+}
+
+.cate-title {
+  font-size: 29px;
+  font-weight: bolder;
+  margin: 10px;
+}
+
+.see-all {
+  float: right;
+  text-transform: capitalize;
+  background-color:  #ff5c01;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+.see-all:hover{
+  background-color:#eeb799;
+  color:black;
+  font-weight: bold;
+}
+.header-1 {
+  margin-top: 20px;
+}
+
+ion-spinner {
+  --color: #ff5c01;
+  width: 100px;
+  height: 100px;
+  opacity: 0.9;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform: -webkit-translate(-50%, -50%);
+  transform: -moz-translate(-50%, -50%);
+  transform: -ms-translate(-50%, -50%);
+}
+
+@media (max-width:768px) {
+  .cate-title {
+    font-size: 22px;
+    font-weight: bolder;
+    margin: 8px;
+  }
+
+  .see-all {
+    float: right;
+    text-transform: capitalize;
+    font-size: 14px;
+    width: 90px;
+    height: 30px;
+  }
+}
+
+@media (max-width:440px) {
+  .cate-title {
+    font-size: 17px;
+    font-weight: bolder;
+    margin: 5px;
+  }
+
+}

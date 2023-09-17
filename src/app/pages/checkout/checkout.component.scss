@@ -1,0 +1,116 @@
+ion-card {
+    padding: 10px;
+    border-radius: 25px;
+    box-shadow: none;
+    border: 1px solid rgb(219, 215, 215);
+}
+.box-s {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.cart-box {
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.title-cart {
+    color: black;
+    margin-left: 15px;
+    font-family: sans-serif;
+    font-weight: bolder;
+    font-size: 32px;
+}
+
+.cart-section {
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 15%;
+}
+.add-address-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border: 1px solid #ff5c01;
+    background-color: white;
+    color: #ff5c01;
+    border-radius: 50%;
+}
+// .add-address-btn:hover {
+//     opacity: 0.8;
+//     background-color: #f5cab1;
+//     color: #ff5c01;
+// }
+.pencil{
+    font-size: 20px;
+}
+.btn-a1 {
+    width: 230px;
+    height: 40px;
+    border: 1px solid rgb(170, 168, 168);
+    border-radius: 10px;
+    color: black;
+    text-transform: capitalize;
+}
+
+.btn-a1-2 {
+    background-color: #ff5c01;
+    color: white;
+}
+.text-bold {
+    font-weight: bolder;
+}
+
+.text-font {
+    font-size: 14px;
+}
+.zip-code {
+    width: 90%;
+    margin-top: 20px;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid rgb(170, 168, 168);
+    background-color: #fff;
+    margin-left: 5px;
+    margin-bottom: 25px;
+}
+
+.zip-code:focus {
+    outline: none;
+}
+.checkout-1 {
+    margin-left: 10px;
+    padding: 3px 10px;
+    border-radius: 5px;
+    background-color: #ff5c01;
+    color: white;
+    font-size: 12px;
+}
+
+// previous products
+.pre-o-bx {
+    margin-top: 40px;
+}
+.fixed-1{
+    position: fixed; 
+    right: 40px; 
+    z-index: 1000;
+}
+
+@media (max-width: 1024px) {
+    .fixed-1{
+        position: static;
+    }
+}
+@media (max-width:767px) {
+    .cart-section {
+        width:100%;
+        margin: auto;
+        margin-top: 30px;
+    }
+}

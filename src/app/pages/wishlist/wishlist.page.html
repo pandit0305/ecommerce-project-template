@@ -1,0 +1,101 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+  <app-bread-crumb [breadCrumbs]="breadCrumbs"></app-bread-crumb>
+  <div id="box">
+    <h4 class="title">Your Favorited Products</h4>
+    <app-product-card [items]="favoriteitem" (removeWishlistEmitter)="removeFromWishList($event)"></app-product-card>
+    <!-- <ion-grid *ngIf="!isLoading">
+      <ion-row class="ion-no-padding">
+        <ion-col size-lg="3" size-md="4" size-xs="6" *ngFor="let item of favoriteitem;let i = index;"
+          class="ion-no-padding ion-no-margin">
+          <ion-card class="ion-no-padding ion-no-margin">
+            <ion-icon name="heart" size="large" class="heart" *ngIf="item?.isWishlist" (click)="removeFromWishList(item?.title)"></ion-icon>
+            <ion-card-content class="img-01" (click)="getProductItem(item)">
+              <img [src]="item?.image" alt="">
+            </ion-card-content>
+            <ion-card-header class="text-center">
+              <ion-card-title class="text-color-black">{{item?.title}}</ion-card-title>
+              <ion-card-subtitle class="text-color-black">{{item?.weight}}</ion-card-subtitle>
+            </ion-card-header>
+            <ion-grid id="price-btn">
+              <ion-row class="ion-no-padding ion-no-padding">
+                <ion-col size="6" [sizeMd]="6" [sizeSm]="6">
+                  <p class="text-color-black price-cd" *ngIf="!item?.offer">
+                    &#x20B9;
+                    {{ item?.quantity == 0 ? item?.price : item?.price * item?.quantity }}
+                  </p>
+                  <p class="text-color-black price-cd" *ngIf="item?.offer">
+                    &#x20B9;
+                    {{ item?.quantity == 0 ? item?.price : item?.price * item?.quantity }}
+                  </p>
+                  <p class="text-color-black price-cd" *ngIf="item?.offer">
+                    &#x20B9;
+                    {{
+                    (item?.quantity == 0 ? item?.price : item?.price * item?.quantity) -
+                    ((item?.quantity == 0 ? item?.price : item?.price * item?.quantity) *
+                    item?.discount) /
+                    100
+                    }}
+                </ion-col>
+                <ion-col size="6" [sizeMd]="6" [sizeSm]="6" class="add-btn">
+                  <ion-button fill="clear" (click)="addToCart(item)"
+                    *ngIf="!item?.isCart || item?.quantity == 0">ADD</ion-button>
+                  <div *ngIf="item?.isCart && item?.quantity && item.id != 5">
+                    <app-cart-button [item]="item"></app-cart-button>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid> -->
+    <!-- <div class="grid-box">
+      <ion-card class="ion-no-padding ion-no-margin" *ngFor="let item of favoriteitem;let i = index;">
+        <ion-icon name="heart-outline" size="large" class="heart-outline" (click)="addWishlist(item)"
+          *ngIf="!item?.isWishlist"></ion-icon>
+        <ion-icon name="heart" size="large" class="heart" *ngIf="item?.isWishlist"
+          (click)="removeFromWishList(item?.title)"></ion-icon>
+        <ion-card-content class="img-01" (click)="getProductItem(item)">
+          <img [src]="item?.image" alt="">
+        </ion-card-content>
+        <ion-card-header class="text-center">
+          <ion-card-title class="text-color-black">{{item?.title}}</ion-card-title>
+          <ion-card-subtitle class="text-color-black">{{item?.weight}}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-grid id="price-btn">
+          <ion-row class="ion-no-padding ion-no-padding">
+            <ion-col size="6" [sizeMd]="6" [sizeSm]="6">
+              <p class="text-color-black price-cd" *ngIf="!item?.offer">
+                &#x20B9;
+                {{ item?.quantity == 0 ? item?.price : item?.price * item?.quantity }}
+              </p>
+              <p class="text-color-black price-cd" *ngIf="item?.offer">
+                &#x20B9;
+                {{ item?.quantity == 0 ? item?.price : item?.price * item?.quantity }}
+              </p>
+              <p class="text-color-black price-cd" *ngIf="item?.offer">
+                &#x20B9;
+                {{
+                (item?.quantity == 0 ? item?.price : item?.price * item?.quantity) -
+                ((item?.quantity == 0 ? item?.price : item?.price * item?.quantity) *
+                item?.discount) /
+                100
+                }}
+            </ion-col>
+            <ion-col size="6" [sizeMd]="6" [sizeSm]="6" class="add-btn">
+              <ion-button fill="clear" (click)="addToCart(item)"
+                *ngIf="!item?.isCart || item?.quantity == 0">ADD</ion-button>
+              <div *ngIf="item?.isCart && item?.quantity && item.id != 5">
+                <app-cart-button [item]="item"></app-cart-button>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </div> -->
+    <h4 class="title">Our Recommendations</h4>
+    <app-product-slider [items]="recommendeditem" (addWishlistEmitter)="getItems($event)"></app-product-slider>
+  </div>
+</ion-content>

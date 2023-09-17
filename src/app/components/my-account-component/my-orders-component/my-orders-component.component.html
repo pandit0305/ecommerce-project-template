@@ -1,0 +1,27 @@
+<ion-list lines="none" *ngIf="!isVisible" class="order-list">
+  <div *ngFor="let item of ordersObject;let i=index">
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img [src]="item.orderImage" />
+      </ion-thumbnail>
+      <ion-label>
+        <div class="div-left">
+          <div class="text-bold">
+            <ion-text class="text-left">{{item.orderId}}</ion-text>
+            <ion-text class="text-right">{{item.totalCost}}</ion-text>
+          </div>
+          <div>
+            <ion-text class="small-text">Placed on {{item.orderedDate}}</ion-text>
+          </div>
+        </div>
+        <div class="div-right">
+          <ion-text class="text-border medium-text">{{item.orderStatus}}</ion-text>
+        </div>
+      </ion-label>
+      <button class="btn-style medium-text" (click)="showOrderDetails(item)">View Details</button>
+    </ion-item>
+    <div class="hr-line"></div>
+  </div>
+</ion-list>
+
+<app-order-details-component [rowNumber]="numberid" *ngIf="isVisible"></app-order-details-component>

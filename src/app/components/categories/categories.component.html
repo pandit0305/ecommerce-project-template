@@ -1,0 +1,12 @@
+<ion-grid>
+  <ion-row>
+    <ion-card class="card" fill="clear" *ngFor="let item of categories;"  (click)="gotoCategoiesPage(item)">
+      <ion-col >
+        <ion-card class="ion-card">
+          <img [src]="item?.image"
+        /></ion-card>
+        <ion-text> {{ item?.title }} </ion-text>
+      </ion-col>
+    </ion-card>
+  </ion-row>
+</ion-grid>

@@ -1,0 +1,29 @@
+ion-grid{
+    width: 95%;
+    margin: auto;
+}
+.ion-card {
+    height: fit-content;
+    width: 150px;
+    box-shadow: none;
+}
+
+.card {
+    box-shadow: none;
+    outline: none;
+    height: 250px;
+    width: 180px;
+    justify-content: center;
+    text-align: center;
+    border: 0 !important;
+    box-shadow: 0 !important;
+    border: none !important;
+    border-style: none !important;
+    margin-left: 17px;
+    cursor: pointer;
+}
+
+ion-text {
+    font-weight: bold;
+    font-size: 15px;
+}

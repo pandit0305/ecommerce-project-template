@@ -1,0 +1,111 @@
+<ion-card [formGroup]="signupFormGroup">
+    <ion-item lines="none">
+        <h3 class="text-color-black text-bold signup-1">Create your Account</h3>
+    </ion-item>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-label>
+                    <input class="text-color-black address-text first" formControlName="firstname"
+                        placeholder="First Name*">
+                    <ion-label class="text-danger fs" *ngIf="isInvalid('firstname')">This is required.</ion-label>
+                </ion-label>
+            </ion-col>
+            <ion-col>
+                <ion-label>
+                    <input class="text-color-black address-text last" formControlName="lastname"
+                        placeholder="Last Name*">
+                    <ion-label class="text-danger fs" *ngIf="isInvalid('lastname')">This is required.</ion-label>
+                </ion-label>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col size="1.5" class="text-center">
+                <ion-label class="flag-ar" (click)="showDropDown()">
+                    <img [src]="this.flag" alt="" class="flag"><ion-icon name="caret-down" class="ar-c"></ion-icon>
+                </ion-label>
+
+            </ion-col>
+            <ion-col size="10.5">
+                <ion-label>
+                    <input type="text" class="text-color-black address-text" [maxlength]="10"
+                        formControlName="telephone" placeholder="Mobile Number*">
+                    <ion-label class="text-danger fs"
+                        *ngIf="telephone.errors?.['required'] && (telephone.dirty || telephone.touched || isSubmit)">This
+                        is
+                        required.</ion-label>
+                    <ion-label class="text-danger fs" *ngIf="telephone.errors?.['emailPhoneValidation']">Invalid
+                        mobile
+                        number.</ion-label>
+                </ion-label>
+            </ion-col>
+        </ion-row>
+        <ion-row class="drop-down" *ngIf="isShow">
+            <ion-col>
+                <div class="select-country">
+                    <div class="c-1" *ngFor="let code of countries;" (click)="getCode(code)">
+                        <img [src]="code.flag" alt="" class="flag">
+                        <p class="cod-01">{{ code?.name }}</p>
+                        <p class="cod-01">{{ code?.code }} ({{ code?.countryId }})</p>
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-label>
+                    <input types="text" class="text-color-black address-text" formControlName="email"
+                        placeholder="E-mail Address*">
+                    <ion-label class="text-danger fs"
+                        *ngIf="email.errors?.['required'] && (email.dirty || email.touched || isSubmit)">This is
+                        required.</ion-label>
+                    <ion-label class="text-danger fs" *ngIf="email.errors?.['emailPhoneValidation']">Invalid
+                        email.</ion-label>
+                </ion-label>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-label>
+                    <input type="password" class="text-color-black address-text" [minlength]="8" [maxlength]="12"
+                        formControlName="password" placeholder="Password*">
+                    <ion-label class="text-danger fs"
+                        *ngIf="password.errors?.['required'] && (password.dirty || password.touched || isSubmit)">This
+                        is
+                        required.</ion-label>
+                    <ion-label class="text-danger fs" *ngIf="password.errors?.['passwordStrength']">Password seems too
+                        weak.</ion-label>
+                </ion-label>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-label>
+                    <input type="password" class="text-color-black address-text" formControlName="confirm"
+                        placeholder="Confirm password*">
+                    <ion-label class="text-danger fs"
+                        *ngIf="confirm.errors?.['required'] && (confirm.dirty || confirm.touched || isSubmit)">This
+                        is required.</ion-label>
+                    <ion-label class="text-danger fs" *ngIf="confirm.errors?.['confirmPasswordValidator']">Password does
+                        not
+                        match.</ion-label>
+                </ion-label>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-label>
+                    <input class="text-color-black address-text" formControlName="referral_code"
+                        placeholder="Referral Code*">
+                    <ion-label class="text-danger fs" *ngIf="isInvalid('referral_code')">This is required.</ion-label>
+                </ion-label>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <div class="box-btn">
+        <ion-button class="checkout-btn" fill="clear" [ngClass]="{'opacity':isLoading}" (click)="signup()"> <span
+                *ngIf="isLoading" class="loader"></span>{{ isLoading? 'Signing In':'Sign In'}}</ion-button>
+    </div>
+    <h5 class="text-0x">Already have an account? <span class="signup" (click)="gotoLogin()">Login</span></h5>
+</ion-card>
