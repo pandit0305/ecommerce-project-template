@@ -21,8 +21,5 @@ export class OrderDetailsPage implements OnInit {
     console.log(this.orderDetailsObject);
     console.log(this.orderDetailsObject.items);
   }
-  goBack() {
-    this.router.navigate(['/my-orders']);
-  }
 
 }

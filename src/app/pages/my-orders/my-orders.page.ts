@@ -23,7 +23,7 @@ export class MyOrdersPage implements OnInit {
   onNextClicked(od: any) {
     console.log(od)
     console.log(od.id)
-    this.router.navigateByUrl(`/order-details`, { state: od });
+    this.router.navigateByUrl(`home/order-details`, { state: od });
   }
 }
 

@@ -1,66 +1,12 @@
-p{
-    text-align: justify;
-    color: rgb(69, 68, 68);
-    font-size: 13px;
-    padding-top: 10px;
-    padding-left:50px;
-    padding-right:50px;
+ion-card{
+    width: 90%;
+    margin: auto;
+    border: none;
+    box-shadow: none;
+}
+ion-item{
+    margin-top: 20px;
 }
 .title{
-    color: rgb(49, 48, 48);
-    font-size: 25px;
-    padding-top: 22px;
     font-weight: bold;
-    padding-left:50px;
-    font-size: 13px;
-    padding-left: 80px;
-    padding-right:80px;
 }
-
-.breadcrumbs{
-    padding-left: 80px;
-}
-
-@media (max-width:768px) {
-    .breadcrumbs{
-        padding-left: 40px;
-    }
-    p{
-        text-align: justify;
-        color: rgb(69, 68, 68);
-        font-size: 15px;
-        padding-left: 40px;
-        padding-right:40px;
-        padding-top: 15px;
-    }
-    .title{
-        color: rgb(49, 48, 48);
-        font-size: 25px;
-        padding-top: 22px;
-        font-weight: bold;
-        padding-left: 40px;
-        padding-right:40px;
-    }
-  }
-
-  @media (max-width:425px) {
-    .breadcrumbs{
-        padding-left: 30px;
-    }
-    p{
-        text-align: justify;
-        color: rgb(69, 68, 68);
-        font-size: 15px;
-        padding-left: 30px;
-        padding-right:30px;
-        padding-top: 15px;
-    }
-    .title{
-        color: rgb(49, 48, 48);
-        font-size: 25px;
-        padding-top: 22px;
-        font-weight: bold;
-        padding-left: 30px;
-        padding-right:30px;
-    }
-  }

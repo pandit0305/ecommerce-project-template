@@ -10,10 +10,10 @@
         </ion-thumbnail>
         <ion-label>
           <p><b>{{item.status}}</b></p>
-          <ion-text>Arriving By {{item.dateOfArrival}}</ion-text><br>
-          <ion-text>{{item.productTitle}}</ion-text>
+          <ion-text class="text-color-black text-01">Arriving By {{item.dateOfArrival}}</ion-text><br>
+          <ion-text class="text-color-black text-01">{{item.productTitle}}</ion-text>
         </ion-label>
-        <ion-icon name="chevron-forward-outline" slot="end" (click)="onNextClicked(item)"></ion-icon>
+        <ion-icon name="chevron-forward-outline" class="ic-01" slot="end" (click)="onNextClicked(item)"></ion-icon>
       </ion-item>
       <div class="hr-line"></div>
     </div>
